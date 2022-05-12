@@ -29,6 +29,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@transdevoficial/design-tokens": "^1.0.0",
+    "@transdevoficial/ds-assets": "^1.0.0",
     "lit": "^2.2.3"
   },
   "devDependencies": {
