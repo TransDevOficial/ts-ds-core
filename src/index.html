@@ -8,17 +8,23 @@
     <title>Document</title>
 
     <link href="http://fonts.cdnfonts.com/css/sifonn" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" type="text/css" href="tokens/globals.css">
     <link rel="stylesheet" type="text/css" href="tokens/transdev/tema-1/light.css">
 </head>
 
 <body>
 
-    <ts-button variant="primary">Label</ts-button>
-    <br></br>
-    <ts-button variant="secondary" format="rounded">Label</ts-button>
-    <br></br>
-    <ts-button></ts-button>
+    <ts-button variant="primary" label='Button'></ts-button>
+    <br>
+    <ts-button variant="secondary" format="rounded" label='Button'></ts-button>
+    <br>
+    <ts-button label='Button' disabled></ts-button>
+    <br>
+    <ts-button format="rounded" label='Button' disabled></ts-button>
 
 </body>
 

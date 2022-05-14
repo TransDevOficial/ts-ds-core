@@ -1,0 +1,149 @@
+@import "../../styles/tokens.scss";
+
+.ts-button {
+  $self: &;
+  font-family: $font-family-01, sans-serif !important;
+  font-size: $font-size-xxs !important;
+  line-height: $line-height-default !important;
+  @include motion-token(switch-slow, "&:hover");
+
+  &--primary {
+    #{$self}__button {
+      color: $brand-color-blue-02;
+      background-color: $brand-color-pink-01;
+      border: none;
+
+      &:hover {
+        color: $neutral-elements-01;
+        background-color: $brand-color-02;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &--secondary {
+    #{$self}__button {
+      color: $brand-color-blue-02;
+      background-color: $brand-color-blue-pure;
+      border: none;
+
+      &:hover {
+        color: $neutral-elements-01;
+        background-color: $brand-color-blue-01;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &--inverse {
+    #{$self}__button {
+      color: $neutral-elements-01;
+      background-color: $brand-color-blue-01;
+      border: none;
+
+      &:hover {
+        color: $brand-color-blue-02;
+        background-color: $brand-color-blue-pure;
+        cursor: pointer;
+      }
+    }
+
+    #{$self}__button--secondary {
+      color: $brand-color-blue-02;
+      background-color: $brand-color-pink-01;
+      border: none;
+
+      &:hover {
+        color: $brand-color-blue-02;
+        background-color: $brand-color-pink-pure;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &--disabled {
+    #{$self}__button {
+      background-color: $neutral-elements-03;
+      color: $neutral-elements-01;
+      cursor: none;
+      pointer-events: none;
+    }
+  }
+
+  &--loading {
+    #{$self}__button {
+      color: $brand-color-pink-pure;
+      position: relative;
+      text-align: left;
+      padding-left: 2%;
+      pointer-events: none;
+      cursor: none;
+      &::after {
+        content: "";
+        left: 70%;
+        top: calc(35% - 1px);
+        display: block;
+        margin: auto;
+        position: absolute;
+        border: 2px solid transparent;
+        border-radius: 50%;
+        border-top: 2px solid $brand-color-pink-pure;
+        border-bottom: 2px solid $brand-color-pink-pure;
+        width: 10px;
+        height: 10px;
+        animation: spin 4s linear infinite;
+      }
+    }
+
+    #{$self}__button--secondary {
+      color: $brand-color-blue-02;
+      &::after {
+        border: 2px solid transparent;
+        border-top: 2px solid $brand-color-blue-02;
+        border-bottom: 2px solid $brand-color-blue-02;
+      }
+    }
+  }
+
+  &--flat {
+    #{$self}__button {
+      border-radius: $border-radius-none;
+    }
+  }
+
+  &--rounded {
+    #{$self}__button {
+      border-radius: $border-radius-sm;
+    }
+  }
+
+  &--small {
+    #{$self}__button {
+      width: 115px;
+      height: 35px;
+    }
+  }
+
+  &--medium {
+    #{$self}__button {
+      width: 120px;
+      height: 40px;
+    }
+  }
+
+  &--large {
+    #{$self}__button {
+      width: 125px;
+      height: 45px;
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
