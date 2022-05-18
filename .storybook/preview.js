@@ -1,4 +1,4 @@
-import { html } from "lit"
+import { html } from "lit";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -8,47 +8,47 @@ export const parameters = {
       date: /Date$/,
     },
   },
-}
+};
 
 export const globalTypes = {
   theme: {
-    name: 'Themes',
-    description: 'Themes of the application',
-    defaultValue: 'transdev/tema-1',
+    name: "Themes",
+    description: "Themes of the application",
+    defaultValue: "transdev/tema-1",
     right: true,
     toolbar: {
-      icon: 'edit',
+      icon: "edit",
       items: [
-        { value: 'transdev/tema-1', title: 'TransDev', right: 'Tema 1' },
-        { value: 'transdev/tema-2', title: 'TransDev', right: 'Tema 2' },
+        { value: "transdev/tema-1", title: "TransDev", right: "Tema 1" },
+        { value: "transdev/tema-2", title: "TransDev", right: "Tema 2" },
       ],
       showname: true,
-    }
+    },
   },
   mode: {
-    name: 'Mode',
-    description: 'Mode of the application',
-    defaultValue: 'light',
+    name: "Mode",
+    description: "Mode of the application",
+    defaultValue: "light",
     right: true,
     toolbar: {
-      icon: 'edit',
+      icon: "edit",
       items: [
-        { value: 'light', title: 'Light', right: 'Light' },
-        { value: 'dark', title: 'Dark', right: 'Dark' },
+        { value: "light", title: "Light", right: "Light" },
+        { value: "dark", title: "Dark", right: "Dark" },
       ],
       showname: true,
-    }
+    },
   },
-}
+};
 
 export const decorators = [
   (Story, context) => {
-    let style = '';
-    let split = context.globals.theme.split('/');
+    let style = "";
+    let split = context.globals.theme.split("/");
     let brand = split[0];
     let theme = split[1];
 
-    if (context.globals.mode == 'dark') {
+    if (context.globals.mode == "dark") {
       style = `
         .sb-show-main {
           background-color: #202020 !important;
@@ -61,10 +61,20 @@ export const decorators = [
       </style>
 
       <div brand=${brand} theme=${theme} mode=${context.globals.mode}>
-        <link rel="preload" type="text/css" href="tokens/globals.css" as="style">
-        <link rel="preload" type="text/css" href="tokens/${context.globals.theme}/${context.globals.mode}.css" as="style">
+        <link
+          rel="preload"
+          type="text/css"
+          href="tokens/globals.css"
+          as="style"
+        />
+        <link
+          rel="preload"
+          type="text/css"
+          href="tokens/${context.globals.theme}/${context.globals.mode}.css"
+          as="style"
+        />
         ${Story()}
       </div>
-    `
-  }
-]
+    `;
+  },
+];

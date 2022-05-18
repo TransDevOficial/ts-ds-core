@@ -1,0 +1,9 @@
+@import '../../styles/tokens.scss';
+
+.ts-button-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 260px;
+}
