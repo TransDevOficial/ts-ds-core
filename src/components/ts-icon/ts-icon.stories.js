@@ -13,13 +13,13 @@ export default {
       },
       source: {
         code: `
-                    import '@transdevoficial/ts-ds-core/dist/components/ts-icon';
+import '@transdevoficial/ts-ds-core/dist/components/ts-icon';
 
-                    <ts-icon
-                        src="string"
-                        size="string"
-                        inverse="boolean"
-                    ></ts-icon>
+<ts-icon
+  src="string"
+  size="string"
+  inverse="boolean">
+</ts-icon>
                 `,
       },
     },

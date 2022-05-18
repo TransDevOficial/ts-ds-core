@@ -15,17 +15,17 @@ export default {
       },
       source: {
         code: `
-                    import '@transdevoficial/ts-ds-core/dist/components/ts-button-group';
+import '@transdevoficial/ts-ds-core/dist/components/ts-button-group';
 
-                    <ts-button-group
-                        button-primary-label="string"
-                        button-secondary-label="string"
-                        button-primary-disabled="boolean"
-                        button-secondary-disabled="boolean"
-                        inverse="boolean"
-                        @ts-button-primary-click="event"
-                        @ts-button-secondary-click="event"
-                    ></ts-button-group>
+<ts-button-group
+  button-primary-label="string"
+  button-secondary-label="string"
+  button-primary-disabled="boolean"
+  button-secondary-disabled="boolean"
+  inverse="boolean"
+  @ts-button-primary-click="event"
+  @ts-button-secondary-click="event">
+</ts-button-group>
                 `,
       },
     },

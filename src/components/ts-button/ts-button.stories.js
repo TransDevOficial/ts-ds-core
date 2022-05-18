@@ -15,18 +15,18 @@ export default {
       },
       source: {
         code: `
-                    import '@transdevoficial/ts-ds-core/dist/components/ts-button';
+import '@transdevoficial/ts-ds-core/dist/components/ts-button';
 
-                    <ts-button
-                        size="string"
-                        variant="string"
-                        format="string"
-                        label="string"
-                        disabled
-                        loading
-                        inverse
-                        @ts-button-click="event"
-                    ></ts-button>
+<ts-button 
+  size="string"
+  variant="string"
+  format="string"
+  label="string"
+  disabled="boolean"
+  loading="boolean"
+  inverse="boolean"
+  @ts-button-click="event">
+</ts-button>
                 `,
       },
     },
