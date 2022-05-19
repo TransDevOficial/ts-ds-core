@@ -55,7 +55,7 @@ import '@transdevoficial/ts-ds-core/dist/components/ts-button';
       },
       control: {
         type: "select",
-        options: ["primary", "secondary"],
+        options: ["primary", "secondary", "danger", "success", "warning"],
       },
     },
     format: {

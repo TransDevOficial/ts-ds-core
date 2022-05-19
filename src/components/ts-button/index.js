@@ -47,26 +47,30 @@ export class TsButton extends LitElement {
     return html`
       <div
         class="${classMap({
-          "ts-button": true,
-          [`ts-button--${this.size}`]: this.size,
-          [`ts-button--${this.variant}`]: this.variant,
-          [`ts-button--${this.format}`]: this.format,
-          "ts-button--loading": this.loading,
-          "ts-button--inverse": this.inverse,
-          "ts-button--disabled": this.disabled,
-        })}"
+      "ts-button": true,
+      [`ts-button--${this.size}`]: this.size,
+      [`ts-button--${this.variant}`]: this.variant,
+      [`ts-button--${this.format}`]: this.format,
+      "ts-button--loading": this.loading,
+      "ts-button--inverse": this.inverse,
+      "ts-button--disabled": this.disabled,
+    })}"
       >
         <button
-          class="ts-button ts-button__button ${this.variant
-            ? `ts-button__button--${this.variant}`
-            : ""}"
+          class="ts-button ${classMap({
+      "ts-button__button": true,
+      [`ts-button__button--${this.variant}`]: this.variant,
+      "ts-button__button--inverse": this.inverse,
+    })}"
           @click=${this._tsHandleButtonClick}
           type="button"
           aria-label=${this.loading ? "Loading" : undefined}
           aria-disabled=${this.disabled}
           ?disabled=${this.disabled}
         >
+          <span>
           ${this.loading ? `Loading` : this.label}
+          </span>
         </button>
       </div>
     `;

@@ -5,8 +5,11 @@
   font-family: $font-family-01, sans-serif !important;
   display: flex;
   align-items: center;
-  @include motion-token(switch-slow, "&:hover");
 
+  &__button {
+    @include motion-token(switch-slow, "&:hover");
+  }
+  
   &--primary {
     color: $brand-color-pink-01 !important;
     #{$self}__button {
@@ -47,7 +50,6 @@
         }
 
         &:hover {
-          color: $brand-color-blue-02;
           background-color: $brand-color-blue-01;
           cursor: pointer;
         }

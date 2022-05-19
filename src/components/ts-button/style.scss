@@ -9,13 +9,14 @@
 
   &--primary {
     #{$self}__button {
-      color: $brand-color-blue-02;
-      background-color: $brand-color-pink-01;
-      border: none;
+      color: $brand-color-pink-01;
+      background-color: transparent;
+      border: 2px solid $brand-color-pink-01;
 
       &:hover {
         color: $neutral-elements-01;
-        background-color: $brand-color-02;
+        background-color: $brand-color-pink-01;
+        border: none;
         cursor: pointer;
       }
     }
@@ -23,13 +24,59 @@
 
   &--secondary {
     #{$self}__button {
-      color: $brand-color-blue-02;
-      background-color: $brand-color-blue-pure;
-      border: none;
+      color: $brand-color-blue-pure;
+      background-color: transparent;
+      border: 2px solid $brand-color-blue-pure;
+
+      &:hover {
+        color: $brand-color-blue-01;
+        background-color: $brand-color-blue-pure;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &--danger {
+    #{$self}__button {
+      color: $feedback-color-warning-pure;
+      background-color: transparent;
+      border: 2px solid $feedback-color-warning-pure;
 
       &:hover {
         color: $neutral-elements-01;
-        background-color: $brand-color-blue-01;
+        background-color: $feedback-color-warning-pure;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &--success {
+    #{$self}__button {
+      color: $feedback-color-success-pure;
+      background-color: transparent;
+      border: 2px solid $feedback-color-success-pure;
+
+      &:hover {
+        color: $neutral-elements-01;
+        background-color: $feedback-color-success-pure;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &--warning {
+    #{$self}__button {
+      color: darkorange;
+      background-color: transparent;
+      border: 2px solid darkorange;
+
+      &:hover {
+        color: $neutral-elements-01;
+        background-color: darkorange;
+        border: none;
         cursor: pointer;
       }
     }
@@ -37,13 +84,13 @@
 
   &--inverse {
     #{$self}__button {
-      color: $neutral-elements-01;
-      background-color: $brand-color-blue-01;
+      color: $brand-color-blue-01;
+      background-color: $brand-color-blue-pure;
       border: none;
 
       &:hover {
-        color: $brand-color-blue-02;
-        background-color: $brand-color-blue-pure;
+        color: $neutral-elements-01;
+        background-color: $brand-color-blue-01;
         cursor: pointer;
       }
     }
@@ -59,25 +106,52 @@
         cursor: pointer;
       }
     }
-  }
 
-  &--disabled {
-    #{$self}__button {
-      background-color: $neutral-elements-03;
-      color: $neutral-elements-01;
-      cursor: none;
-      pointer-events: none;
+    #{$self}__button--danger {
+      color: $brand-color-blue-02;
+      background-color: $feedback-color-warning-pure;
+      border: none;
+
+      &:hover {
+        color: $neutral-elements-01;
+        background-color: $feedback-color-warning-01;
+        cursor: pointer;
+      }
+    }
+
+    #{$self}__button--success {
+      color: $brand-color-blue-02;
+      background-color: $feedback-color-success-pure;
+      border: none;
+
+      &:hover {
+        color: $neutral-elements-01;
+        background-color: $feedback-color-success-01;
+        cursor: pointer;
+      }
+    }
+
+    #{$self}__button--warning {
+      color: $brand-color-blue-02;
+      background-color: orange;
+      border: none;
+
+      &:hover {
+        color: $neutral-elements-01;
+        background-color: orangered;
+        cursor: pointer;
+      }
     }
   }
 
   &--loading {
     #{$self}__button {
-      color: $brand-color-pink-pure;
       position: relative;
+      padding-left: $spacing-size-xxxs;
       text-align: left;
-      padding-left: 2%;
       pointer-events: none;
       cursor: none;
+
       &::after {
         content: "";
         left: 70%;
@@ -87,20 +161,93 @@
         position: absolute;
         border: 2px solid transparent;
         border-radius: 50%;
-        border-top: 2px solid $brand-color-pink-pure;
-        border-bottom: 2px solid $brand-color-pink-pure;
-        width: 10px;
         height: 10px;
+        width: 10px;
         animation: spin 4s linear infinite;
       }
     }
 
+    #{$self}__button--primary {
+      color: $brand-color-pink-01;
+      &::after {
+        border-top: 2px solid $brand-color-pink-01;
+        border-bottom: 2px solid $brand-color-pink-01;
+      }
+
+      &.ts-button__button--inverse {
+        color: $brand-color-blue-01;
+        &::after {
+          border-top: 2px solid $brand-color-blue-01;
+          border-bottom: 2px solid $brand-color-blue-01;
+        }
+      }
+    }
+
     #{$self}__button--secondary {
-      color: $brand-color-blue-02;
+      color: $brand-color-blue-pure;
       &::after {
         border: 2px solid transparent;
-        border-top: 2px solid $brand-color-blue-02;
-        border-bottom: 2px solid $brand-color-blue-02;
+        border-top: 2px solid $brand-color-blue-pure;
+        border-bottom: 2px solid $brand-color-blue-pure;
+      }
+
+      &.ts-button__button--inverse {
+        color: $brand-color-blue-01;
+        &::after {
+          border-top: 2px solid $brand-color-blue-01;
+          border-bottom: 2px solid $brand-color-blue-01;
+        }
+      }
+    }
+
+    #{$self}__button--danger {
+      color: $feedback-color-warning-pure;
+      &::after {
+        border: 2px solid transparent;
+        border-top: 2px solid $feedback-color-warning-pure;
+        border-bottom: 2px solid $feedback-color-warning-pure;
+      }
+
+      &.ts-button__button--inverse {
+        color: $neutral-elements-01;
+        &::after {
+          border-top: 2px solid $neutral-elements-01;
+          border-bottom: 2px solid $neutral-elements-01;
+        }
+      }
+    }
+
+    #{$self}__button--success {
+      color: $feedback-color-success-pure;
+      &::after {
+        border: 2px solid transparent;
+        border-top: 2px solid $feedback-color-success-pure;
+        border-bottom: 2px solid $feedback-color-success-pure;
+      }
+
+      &.ts-button__button--inverse {
+        color: $neutral-elements-01;
+        &::after {
+          border-top: 2px solid $neutral-elements-01;
+          border-bottom: 2px solid $neutral-elements-01;
+        }
+      }
+    }
+
+    #{$self}__button--warning {
+      color: orange;
+      &::after {
+        border: 2px solid transparent;
+        border-top: 2px solid orange;
+        border-bottom: 2px solid orange;
+      }
+
+      &.ts-button__button--inverse {
+        color: $neutral-elements-01;
+        &::after {
+          border-top: 2px solid $neutral-elements-01;
+          border-bottom: 2px solid $neutral-elements-01;
+        }
       }
     }
   }
@@ -135,6 +282,23 @@
     #{$self}__button {
       width: 125px;
       height: 45px;
+    }
+  }
+
+  &--disabled {
+    #{$self}__button {
+      background-color: transparent;
+      border: 2px solid $neutral-elements-03;
+      color: $neutral-elements-03 !important;
+      cursor: none;
+      pointer-events: none;
+
+      &::after {
+        content: "";
+        animation: none;
+        border-top-color: $neutral-elements-03 !important;
+        border-bottom-color: $neutral-elements-03 !important;
+      }
     }
   }
 }
