@@ -2,7 +2,7 @@ import { html } from "lit";
 import "./index.js";
 
 export default {
-  title: "Components/TsButtonGroup",
+  title: "Components/TsButton",
   component: "ts-button-group",
   parameters: {
     actions: {
