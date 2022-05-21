@@ -77,4 +77,6 @@ export class TsButton extends LitElement {
   }
 }
 
-customElements.define("ts-button", TsButton);
+if(!customElements.get("ts-button")) {
+  customElements.define("ts-button", TsButton);
+}

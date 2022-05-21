@@ -90,4 +90,6 @@ export class TsButtonGroup extends LitElement {
   }
 }
 
-customElements.define("ts-button-group", TsButtonGroup);
+if (!customElements.get("ts-button-group")) {
+  customElements.define("ts-button-group", TsButtonGroup);
+}

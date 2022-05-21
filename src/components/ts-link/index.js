@@ -67,4 +67,6 @@ export class TsLink extends LitElement {
     }
 }
 
-customElements.define('ts-link', TsLink)
+if (!customElements.get('ts-link')) {
+    customElements.define('ts-link', TsLink)
+}

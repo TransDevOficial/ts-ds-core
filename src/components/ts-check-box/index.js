@@ -76,4 +76,6 @@ export class TsCheckBox extends LitElement {
     }
 }
 
-customElements.define("ts-checkbox", TsCheckBox);
+if (!customElements.get('ts-checkbox')) {
+    customElements.define("ts-checkbox", TsCheckBox);
+}

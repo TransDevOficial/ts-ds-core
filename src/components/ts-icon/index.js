@@ -29,10 +29,10 @@ export class TsIcon extends RenderSvg {
       <div
         part="icon"
         class="${classMap({
-          "ts-icon": true,
-          [`ts-icon--${this.size}`]: this.size,
-          "ts-icon--inverse": this.inverse,
-        })}"
+      "ts-icon": true,
+      [`ts-icon--${this.size}`]: this.size,
+      "ts-icon--inverse": this.inverse,
+    })}"
       >
         ${this.renderSvg()}
       </div>
@@ -40,4 +40,6 @@ export class TsIcon extends RenderSvg {
   }
 }
 
-customElements.define("ts-icon", TsIcon);
+if (!customElements.get("ts-icon")) {
+  customElements.define("ts-icon", TsIcon);
+}

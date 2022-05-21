@@ -70,4 +70,6 @@ export class TsButtonIcon extends LitElement {
     }
 }
 
-customElements.define('ts-button-icon', TsButtonIcon);
+if (!customElements.get('ts-button-icon')) {
+    customElements.define('ts-button-icon', TsButtonIcon);
+}
