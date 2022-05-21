@@ -14,8 +14,8 @@ export class TsButton extends LitElement {
       format: { type: String },
       label: { type: String },
       disabled: { type: Boolean },
-      loading: { type: Boolean }, // TODO: implement loading state
-      inverse: { type: Boolean }, // TODO: implement inverse state
+      loading: { type: Boolean },
+      inverse: { type: Boolean },
     };
   }
 
