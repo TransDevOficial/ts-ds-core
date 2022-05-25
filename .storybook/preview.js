@@ -1,6 +1,7 @@
 import { html } from "lit";
 
 export const parameters = {
+  layout: 'centered',
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
     matchers: {
@@ -55,6 +56,15 @@ export const decorators = [
         }
       `;
     }
+
+    if (context.args.inverse) {
+      style = `
+        .sb-show-main, .docs-story {
+          background-color: #202020 !important;
+        }
+      `;
+    }
+
     return html`
       <style>
         ${style}
