@@ -7,7 +7,6 @@ export default create({
     colorSecondary: '#1D0259',
     appBg: '#0D0126',
     appBorderRadius: 8,
-    textColor: '#202020',
     barTextColor: '#202020',
     barSelectedColor: '#0D0126',
     inputBg: '#0d0126',

@@ -68,6 +68,10 @@ export const decorators = [
     return html`
       <style>
         ${style}
+
+        .sidebar-item {
+          color: red !important;
+        }
       </style>
 
       <div brand=${brand} theme=${theme} mode=${context.globals.mode}>
