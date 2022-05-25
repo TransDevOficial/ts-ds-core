@@ -70,19 +70,19 @@ export class TsButtonGroup extends LitElement {
       "ts-button-group--inverse": this.inverse,
     })}
       >
-        <ts-button
-          label=${this.buttonPrimaryLabel}
-          ?disabled=${this.buttonPrimaryDisabled}
-          ?inverse=${this.inverse}
-          @ts-button-click=${this._tsHandleButtonPrimaryClick}
-        >
-        </ts-button>
-        <ts-button
+      <ts-button
           label=${this.buttonSecondaryLabel}
           ?disabled=${this.buttonSecondaryDisabled}
           ?inverse=${this.inverse}
           variant="secondary"
           @ts-button-click=${this._tsHandleButtonSecondaryClick}
+        >
+        </ts-button>
+        <ts-button
+          label=${this.buttonPrimaryLabel}
+          ?disabled=${this.buttonPrimaryDisabled}
+          ?inverse=${this.inverse}
+          @ts-button-click=${this._tsHandleButtonPrimaryClick}
         >
         </ts-button>
       </div>
