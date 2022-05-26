@@ -44,7 +44,7 @@
     "@storybook/addon-links": "^6.4.22",
     "@storybook/builder-webpack5": "^6.4.22",
     "@storybook/manager-webpack5": "^6.4.22",
-    "@storybook/web-components": "^6.4.22",
+    "@storybook/web-components": "^6.1.21",
     "babel-loader": "^8.2.5",
     "copy-webpack-plugin": "^10.2.4",
     "css-loader": "^6.7.1",

@@ -16,15 +16,6 @@ export const globalTypes = {
     name: "Themes",
     description: "Themes of the application",
     defaultValue: "transdev/tema-1",
-    right: true,
-    toolbar: {
-      icon: "edit",
-      items: [
-        { value: "transdev/tema-1", title: "TransDev", right: "Tema 1" },
-        { value: "transdev/tema-2", title: "TransDev", right: "Tema 2" },
-      ],
-      showname: true,
-    },
   },
   mode: {
     name: "Mode",
@@ -62,9 +53,9 @@ export const decorators = [
         .sb-show-main, .docs-story {
           background-color: #202020 !important;
         }
-      `;
-    }
-
+        `;
+      }
+      
     return html`
       <style>
         ${style}
