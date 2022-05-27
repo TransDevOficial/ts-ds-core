@@ -1,23 +1,23 @@
-import { html } from 'lit';
+import { html } from 'lit-element';
 import './index.js';
 
 export default {
-    title: 'Typograph/TsSubtitle',
-    component: 'ts-subtitle',
+    title: 'Typograph/TsParagraph',
+    component: 'ts-paragraph',
     parameters: {
         docs: {
             description: {
-                component: 'The <code><ts-subtitle></code> component is used to display a subtitle.',
+                component: 'The <code><ts-paragraph></code> component is used to display a paragraph.',
             },
             source: {
                 code: `
 
-import '@transdevoficial/ts-ds-core/dist/components/ts-subtitle';
+import '@transdevoficial/ts-ds-core/dist/components/ts-paragraph';
 
-<ts-subtitle
+<ts-paragraph
     label='string'
     inverse='boolean'>
-</ts-subtitle>
+</ts-paragraph>
                 `,
             }
         }
@@ -25,7 +25,7 @@ import '@transdevoficial/ts-ds-core/dist/components/ts-subtitle';
     argTypes: {
         label: {
             name: 'label',
-            description: 'Label of the subtitle',
+            description: 'Label of the paragraph',
             table: {
                 type: { summary: 'string' },
                 defaultValue: { summary: 'Label' },
@@ -50,14 +50,14 @@ import '@transdevoficial/ts-ds-core/dist/components/ts-subtitle';
     },
 }
 
-export const TsSubtitle = (args) => html`
-    <ts-subtitle
+export const TsParagraph = (args) => html`
+    <ts-paragraph
         label="${args.label}"
         ?inverse="${args.inverse}">
-    </ts-subtitle>
+    </ts-paragraph>
 `;
 
-TsSubtitle.args = {
-    label: 'Subtitle',
+TsParagraph.args = {
+    label: 'Label',
     inverse: false,
 }

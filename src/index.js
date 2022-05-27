@@ -4,6 +4,7 @@ import "./components/ts-button-icon";
 import "./components/ts-checkbox";
 import "./components/ts-icon";
 import "./components/ts-link";
+import "./components/ts-paragraph";
 import "./components/ts-select";
 import "./components/ts-select/ts-select-option";
 import "./components/ts-subtitle";
