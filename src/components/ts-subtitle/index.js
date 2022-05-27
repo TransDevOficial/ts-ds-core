@@ -16,7 +16,7 @@ export class TsSubtitle extends LitElement {
 
     constructor() {
         super();
-        this.label = 'Subtitle';
+        this.label = 'Label';
         this.inverse = false;
     }
 

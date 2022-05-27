@@ -58,6 +58,6 @@ export const TsSubtitle = (args) => html`
 `;
 
 TsSubtitle.args = {
-    label: 'Subtitle',
+    label: 'Label',
     inverse: false,
 }
