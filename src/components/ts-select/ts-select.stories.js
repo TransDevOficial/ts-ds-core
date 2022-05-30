@@ -1,12 +1,10 @@
 import { html } from "lit";
 import "./index.js";
-import { TsSelectOption } from "./ts-select-option/index.js";
 import './ts-select-option/index.js';
 
 export default {
     title: "Components/TsSelect",
     component: 'ts-select',
-    subcomponents: { title: 'Components/TsSelectOption', TsSelectOption },
     parameters: {
         actions: {
             handles: ["ts-selected-item", "ts-select-focus", "ts-select-blur"],
