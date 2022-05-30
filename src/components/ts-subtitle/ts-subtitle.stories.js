@@ -2,7 +2,7 @@ import { html } from 'lit';
 import './index.js';
 
 export default {
-    title: 'Typograph/TsSubtitle',
+    title: 'Typography/TsSubtitle',
     component: 'ts-subtitle',
     parameters: {
         docs: {
