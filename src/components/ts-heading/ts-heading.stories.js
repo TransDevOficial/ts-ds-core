@@ -8,7 +8,7 @@ export default {
         docs: {
             description: {
                 component:
-                    'The <code><ts-heading></code> component is a typographic component that can be used to create headings.',
+                    'The `<ts-heading>` component is a typographic component that can be used to create headings.',
             },
             source: {
                 code: `

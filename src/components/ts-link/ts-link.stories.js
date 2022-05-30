@@ -11,7 +11,7 @@ export default {
         },
         docs: {
             description: {
-                component: 'TsLink component is a link component with a lot of options to customize it'
+                component: '`<ts-link>` component is a link component with a lot of options to customize it'
             },
             source: {
                 code: `

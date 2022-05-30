@@ -6,7 +6,7 @@ export default {
     parameters: {
         docs: {
             description: {
-                component: 'TsSelect is a option component with custom styles and options.',
+                component: '`<ts-select-option>` is a option component with custom styles and options.',
             },
             source: {
                 code: `

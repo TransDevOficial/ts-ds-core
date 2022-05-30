@@ -11,7 +11,7 @@ export default {
         },
         docs: {
             description: {
-                component: 'TsButtonIcon component is a button icon component with a lot of options to customize it.'
+                component: '`<ts-button-icon>` component is a button icon component with a lot of options to customize it.'
             },
             source: {
                 code: `

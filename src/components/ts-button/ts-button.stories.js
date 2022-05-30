@@ -11,7 +11,7 @@ export default {
     docs: {
       description: {
         component:
-          "TsButton component is a button component with a lot of options to customize it.",
+          "`<ts-button>` component is a button component with a lot of options to customize it.",
       },
       source: {
         code: `

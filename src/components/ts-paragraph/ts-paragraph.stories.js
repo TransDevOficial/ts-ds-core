@@ -7,7 +7,7 @@ export default {
     parameters: {
         docs: {
             description: {
-                component: 'The <code><ts-paragraph></code> component is used to display a paragraph.',
+                component: 'The `<ts-paragraph>` component is used to display a paragraph.',
             },
             source: {
                 code: `

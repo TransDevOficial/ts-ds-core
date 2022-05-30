@@ -10,7 +10,7 @@ export default {
         },
         docs: {
             description: {
-                component: 'TsCheckBox component is a simple checkbox component.',
+                component: '`<ts-checkbox>` component is a simple checkbox component.',
             },
             source: {
                 code: `

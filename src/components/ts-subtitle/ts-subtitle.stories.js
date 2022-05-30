@@ -7,7 +7,7 @@ export default {
     parameters: {
         docs: {
             description: {
-                component: 'The <code><ts-subtitle></code> component is used to display a subtitle.',
+                component: 'The `<ts-subtitle>` component is used to display a subtitle.',
             },
             source: {
                 code: `

@@ -11,7 +11,7 @@ export default {
     docs: {
       description: {
         component:
-          "TsButtonGroup component is a button group component with a lot of options to customize it.",
+          "`<ts-button-group>` component is a button group component with a lot of options to customize it.",
       },
       source: {
         code: `

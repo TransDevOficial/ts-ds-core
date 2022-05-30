@@ -9,7 +9,7 @@ export default {
     docs: {
       description: {
         component:
-          "TsIcon component is a icon component with a lot of options to customize it.",
+          "`<ts-icon>` component is a icon component with a lot of options to customize it.",
       },
       source: {
         code: `

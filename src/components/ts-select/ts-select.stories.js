@@ -13,7 +13,7 @@ export default {
         },
         docs: {
             description: {
-                component: "TsSelect is a select component with custom styles and options.",
+                component: "`<ts-select>` is a select component with custom styles and options.",
             },
             source: {
                 code: `
