@@ -1,3 +1,4 @@
+import "./components/ts-brand";
 import "./components/ts-button";
 import "./components/ts-button-group";
 import "./components/ts-button-icon";
