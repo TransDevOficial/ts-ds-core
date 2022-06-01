@@ -5,6 +5,32 @@ import './ts-tooltip-description/index.js';
 export default {
     title: "Components/TsTooltip",
     component: "ts-tooltip",
+    parameters: {
+        docs: {
+            description: {
+                component: "`<ts-tooltip>` is a tooltip component with custom styles and options.",
+            },
+            source: {
+                code: `
+
+import '@transdevoficial/ts-ds-core/dist/components/ts-tooltip';
+
+<ts-tooltip
+    label='string'
+    align='string'
+    position='string'
+    inverse='boolean'
+    disabled='boolean'>
+        <ts-tooltip-description>
+
+        // Or you can use a slot
+
+        </ts-tooltip-description>
+</ts-tooltip>
+                `
+            }
+        }
+    },
     argTypes: {
         label: {
             name: "label",
