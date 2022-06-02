@@ -1,8 +1,9 @@
 import { html } from 'lit';
 import './index.js';
+import '../ts-skeleton/index.js';
 
 export default {
-    title: 'Components/TsButtonToggle',
+    title: 'Components/TsButton/TsButtonToggle',
     component: 'ts-button-toggle',
     parameters: {
         actions: {
@@ -120,3 +121,11 @@ TsButtonToggle.args = {
     disabled: false,
     inverse: false,
 }
+
+export const TsButtonToggleSkeleton = () => html`
+    <ts-skeleton width="40" height="20" format="flat"></ts-skeleton>
+    <br>
+    <ts-skeleton width="45" height="20" format="flat"></ts-skeleton>
+    <br>
+    <ts-skeleton width="80" height="20" format="flat"></ts-skeleton>
+`;
