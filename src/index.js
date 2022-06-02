@@ -12,5 +12,6 @@ import "./components/ts-paragraph";
 import "./components/ts-select";
 import "./components/ts-select/ts-select-option";
 import "./components/ts-subtitle";
+import "./components/ts-textarea";
 import "./components/ts-tooltip";
 import "./components/ts-tooltip/ts-tooltip-description";
