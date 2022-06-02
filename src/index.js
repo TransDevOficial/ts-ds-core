@@ -2,6 +2,7 @@ import "./components/ts-brand";
 import "./components/ts-button";
 import "./components/ts-button-group";
 import "./components/ts-button-icon";
+import "./components/ts-button-toggle";
 import "./components/ts-checkbox";
 import "./components/ts-check-icon-button";
 import "./components/ts-heading";
