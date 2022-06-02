@@ -1,0 +1,48 @@
+@import "../../styles/tokens.scss";
+
+.ts-skeleton {
+  $self: &;
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  &__wrapper {
+    background-color: $neutral-elements-02;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: absolute;
+      transform: translateX(-100%);
+      background: linear-gradient(
+        to left,
+        $neutral-elements-02,
+        $neutral-elements-03,
+        $neutral-elements-02
+      );
+      animation: slide 1s infinite;
+    }
+  }
+
+  &--rounded {
+    #{$self}__wrapper {
+      border-radius: $border-radius-md;
+    }
+  }
+
+  &--circular {
+    #{$self}__wrapper {
+      border-radius: $border-radius-circular;
+    }
+  }
+}
+
+@keyframes slide {
+  100% {
+    transform: translateX(100%);
+  }
+}
