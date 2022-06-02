@@ -152,6 +152,6 @@ TsButtonIcon.args = {
     inverse: false,
 };
 
-export const TsButtonIconSkeleton = () => html`
+export const Skeleton = () => html`
 <ts-skeleton width='40' height='40' format='rounded'></ts-skeleton>
 `;
