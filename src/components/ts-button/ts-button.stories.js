@@ -1,5 +1,6 @@
 import "./index.js";
 import { html } from "lit";
+import '../ts-skeleton/index.js';
 
 export default {
   title: "Components/TsButton",
@@ -156,3 +157,7 @@ TsButton.args = {
   loading: false,
   inverse: false,
 };
+
+export const Skeleton = (args) => html`
+<ts-skeleton width='120' height='40' format=${args.format}></ts-skeleton>
+`;
