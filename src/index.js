@@ -16,3 +16,4 @@ import "./components/ts-subtitle";
 import "./components/ts-textarea";
 import "./components/ts-tooltip";
 import "./components/ts-tooltip/ts-tooltip-description";
+import "./components/ts-icon-tooltip";
