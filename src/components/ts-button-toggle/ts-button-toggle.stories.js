@@ -122,7 +122,7 @@ TsButtonToggle.args = {
     inverse: false,
 }
 
-export const TsButtonToggleSkeleton = () => html`
+export const Skeleton = () => html`
     <ts-skeleton width="40" height="20" format="flat"></ts-skeleton>
     <br>
     <ts-skeleton width="45" height="20" format="flat"></ts-skeleton>

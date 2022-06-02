@@ -133,7 +133,7 @@ TsButtonGroup.args = {
   inverse: false,
 };
 
-export const TsButtonGroupSkeleton = () => html`
+export const Skeleton = () => html`
 <div style='display: flex; gap: 20px;'>
 <ts-skeleton width='120' height='40'></ts-skeleton>
 <ts-skeleton width='120' height='40'></ts-skeleton>
