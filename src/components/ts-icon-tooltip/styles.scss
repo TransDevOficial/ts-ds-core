@@ -2,4 +2,10 @@
 
 .ts-icon-tooltip {
     $self: &;
+
+    &--disabled {
+        ts-icon::part(icon) {
+            color: $neutral-elements-03 !important;
+        }
+    }
 }
