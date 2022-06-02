@@ -4,7 +4,7 @@ import * as icons from '@transdevoficial/ds-assets/dist/assets/icons/index.js';
 import '../ts-skeleton/index.js';
 
 export default {
-    title: 'Components/TsButton/TsButtonIcon',
+    title: 'Components/TsButton/ButtonIcon',
     component: 'ts-button-icon',
     parameters: {
         actions: {

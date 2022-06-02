@@ -3,7 +3,7 @@ import "./index.js";
 import './ts-select-option/index.js';
 
 export default {
-    title: "Components/TsSelect",
+    title: "Components/Select",
     component: 'ts-select',
     parameters: {
         actions: {

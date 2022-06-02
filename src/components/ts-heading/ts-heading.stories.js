@@ -2,7 +2,7 @@ import { html } from 'lit';
 import './index.js';
 
 export default {
-    title: 'Typography/TsHeading',
+    title: 'Typography/Heading',
     component: 'ts-heading',
     parameters: {
         docs: {

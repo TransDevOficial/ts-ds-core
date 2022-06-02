@@ -2,7 +2,7 @@ import { html } from 'lit';
 import './index.js';
 
 export default {
-    title: 'Components/TsCheckIconButton',
+    title: 'Components/CheckIconButton',
     component: 'ts-check-icon-button',
     parameters: {
         actions: {

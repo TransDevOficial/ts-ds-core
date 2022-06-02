@@ -3,7 +3,7 @@ import "./index.js";
 import * as brands from '@transdevoficial/ds-assets/dist/assets/brand/index.js';
 
 export default {
-    title: "Components/TsBrand",
+    title: "Components/Brand",
     component: "ts-brand",
     parameters: {
         docs: {

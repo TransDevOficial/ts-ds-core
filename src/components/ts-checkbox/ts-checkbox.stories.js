@@ -2,7 +2,7 @@ import { html } from 'lit';
 import './index.js';
 
 export default {
-    title: 'Components/TsCheckBox',
+    title: 'Components/CheckBox',
     component: 'ts-checkbox',
     parameters: {
         actions: {

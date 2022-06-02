@@ -3,7 +3,7 @@ import './index.js';
 import * as icons from '@transdevoficial/ds-assets/dist/assets/icons/index.js';
 
 export default {
-    title: 'Components/TsLink',
+    title: 'Components/Link',
     component: 'ts-link',
     parameters: {
         actions: {

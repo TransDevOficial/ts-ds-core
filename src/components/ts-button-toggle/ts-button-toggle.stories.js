@@ -3,7 +3,7 @@ import './index.js';
 import '../ts-skeleton/index.js';
 
 export default {
-    title: 'Components/TsButton/TsButtonToggle',
+    title: 'Components/TsButton/ButtonToggle',
     component: 'ts-button-toggle',
     parameters: {
         actions: {

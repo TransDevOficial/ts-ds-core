@@ -2,7 +2,7 @@ import { html } from "lit";
 import "./index.js";
 
 export default {
-    title: "Components/TsSkeleton",
+    title: "Components/Skeleton",
     component: "ts-skeleton",
     parameters: {
         docs: {

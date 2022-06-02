@@ -2,7 +2,7 @@ import { html } from 'lit-element';
 import './index.js';
 
 export default {
-    title: 'Typography/TsParagraph',
+    title: 'Typography/Paragraph',
     component: 'ts-paragraph',
     parameters: {
         docs: {

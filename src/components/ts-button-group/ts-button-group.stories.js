@@ -3,7 +3,7 @@ import "./index.js";
 import '../ts-skeleton/index.js';
 
 export default {
-  title: "Components/TsButton/TsButtonGroup",
+  title: "Components/TsButton/ButtonGroup",
   component: "ts-button-group",
   parameters: {
     actions: {

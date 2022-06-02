@@ -3,7 +3,7 @@ import "./index.js";
 import './ts-tooltip-description/index.js';
 
 export default {
-    title: "Components/TsTooltip",
+    title: "Components/Tooltip",
     component: "ts-tooltip",
     parameters: {
         docs: {
