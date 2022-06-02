@@ -1,8 +1,9 @@
 import { html } from 'lit';
 import './index.js';
+import '../ts-skeleton/index.js';
 
 export default {
-    title: 'Components/TsTextArea',
+    title: 'Components/TextArea',
     component: 'ts-textarea',
     parameters: {
         actions: {
@@ -179,3 +180,14 @@ TsTextArea.args = {
     inverse: false,
     onlyTextArea: false,
 }
+
+export const Skeleton = () => html`
+<div style='display: flex; flex-direction: column; gap: 20px'>
+    <ts-skeleton width='120' height='20'></ts-skeleton>
+    <ts-skeleton width='420' height='165'></ts-skeleton>
+    <div style='display: flex; justify-content: space-between;'>
+        <ts-skeleton width='80' height='20'></ts-skeleton>
+        <ts-skeleton width='80' height='20'></ts-skeleton>
+    </div>
+</div>
+`;
