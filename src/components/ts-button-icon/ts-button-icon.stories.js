@@ -1,9 +1,10 @@
 import { html } from 'lit';
 import './index.js';
 import * as icons from '@transdevoficial/ds-assets/dist/assets/icons/index.js';
+import '../ts-skeleton/index.js';
 
 export default {
-    title: 'Components/TsButton',
+    title: 'Components/TsButton/TsButtonIcon',
     component: 'ts-button-icon',
     parameters: {
         actions: {
@@ -150,3 +151,7 @@ TsButtonIcon.args = {
     disabled: false,
     inverse: false,
 };
+
+export const TsButtonIconSkeleton = () => html`
+<ts-skeleton width='40' height='40' format='rounded'></ts-skeleton>
+`;
