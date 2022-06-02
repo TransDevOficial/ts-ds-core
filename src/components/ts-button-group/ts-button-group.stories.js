@@ -1,8 +1,9 @@
 import { html } from "lit";
 import "./index.js";
+import '../ts-skeleton/index.js';
 
 export default {
-  title: "Components/TsButton",
+  title: "Components/TsButton/TsButtonGroup",
   component: "ts-button-group",
   parameters: {
     actions: {
@@ -131,3 +132,10 @@ TsButtonGroup.args = {
   buttonSecondaryDisabled: false,
   inverse: false,
 };
+
+export const TsButtonGroupSkeleton = () => html`
+<div style='display: flex; gap: 20px;'>
+<ts-skeleton width='120' height='40'></ts-skeleton>
+<ts-skeleton width='120' height='40'></ts-skeleton>
+</div>
+`;
