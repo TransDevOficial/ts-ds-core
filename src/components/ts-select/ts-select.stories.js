@@ -16,7 +16,8 @@ export default {
             source: {
                 code: `
 
-                import '@transdevoficial/ts-ds-core/dist/components/ts-select';
+import '@transdevoficial/ts-ds-core/dist/components/ts-select';
+import '@transdevoficial/ts-ds-core/dist/components/ts-select/ts-select-option';
 
 <ts-select
     label='string'
