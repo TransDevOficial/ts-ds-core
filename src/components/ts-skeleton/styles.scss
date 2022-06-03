@@ -2,47 +2,46 @@
 
 .ts-skeleton {
   $self: &;
-  display: block;
+  font-family: $font-family-02;
+  display: flex;
+  flex-direction: row;
   width: 100%;
   height: 100%;
+  padding: $spacing-size-xxxs;
 
-  &__wrapper {
-    background-color: $neutral-elements-02;
-    position: relative;
-    overflow: hidden;
-
-    &::after {
-      content: "";
-      width: 100%;
-      height: 100%;
-      display: block;
-      position: absolute;
-      transform: translateX(-100%);
-      background: linear-gradient(
-        to left,
-        $neutral-elements-02,
-        $neutral-elements-03,
-        $neutral-elements-02
-      );
-      animation: slide 1s infinite;
-    }
+  &--flex-column {
+    flex-direction: column;
   }
 
-  &--rounded {
-    #{$self}__wrapper {
-      border-radius: $border-radius-md;
-    }
+  &--justify-content--center {
+    justify-content: center;
   }
 
-  &--circular {
-    #{$self}__wrapper {
-      border-radius: $border-radius-circular;
-    }
+  &--justify-content--space-between {
+    justify-content: space-between;
   }
-}
 
-@keyframes slide {
-  100% {
-    transform: translateX(100%);
+  &--justify-content--space-around {
+    justify-content: space-around;
+  }
+
+  &--justify-content--flex-start {
+    justify-content: flex-start;
+  }
+
+  &--justify-content--flex-end {
+    justify-content: flex-end;
+  }
+
+  &--align-items--center {
+    align-items: center;
+  }
+
+  &--align-items--flex-start {
+    align-items: flex-start;
+  }
+
+  &--align-items--flex-end {
+    align-items: flex-end;
   }
 }

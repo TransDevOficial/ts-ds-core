@@ -9,29 +9,37 @@ export class TsSkeleton extends LitElement {
 
     static get properties() {
         return {
-            width: { type: Number },
-            height: { type: Number },
-            format: { type: String },
+            display: { type: String },
+            justifyContent: { type: String, attribute: "justify-content" },
+            alignItems: { type: String, attribute: "align-items" },
+            gap: { type: Number },
+            skeletonItems: { type: Array },
         }
     }
 
     constructor() {
         super();
-        this.width = 100;
-        this.height = 100;
-        this.format = "flat";
+        this.display = "flex-row";
+        this.justifyContent = "center";
+        this.gap = 20;
+        this.skeletonItems = [{
+            width: 100,
+            height: 100,
+            format: 'flat',
+        }];
     }
 
     render() {
         return html`
-        <div class='${classMap({
-            "ts-skeleton": true,
-            [`ts-skeleton--${this.format}`]: this.format,
-        })}'>
         <div 
-        class='ts-skeleton__wrapper'
-        style='width: ${this.width}px; height: ${this.height}px'>
-        </div>
+            class='${classMap({
+            "ts-skeleton": true,
+            [`ts-skeleton--${this.display}`]: this.display,
+            [`ts-skeleton--justify-content--${this.justifyContent}`]: this.justifyContent,
+            [`ts-skeleton--align-items--${this.alignItems}`]: this.alignItems,
+        })}'
+        style='gap: ${this.gap}px;'>
+        <slot></slot>
         </div>
         `;
     }
