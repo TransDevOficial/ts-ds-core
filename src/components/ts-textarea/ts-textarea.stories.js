@@ -1,6 +1,7 @@
 import { html } from 'lit';
 import './index.js';
 import '../ts-skeleton/index.js';
+import '../ts-skeleton/ts-skeleton-item/index.js';
 
 export default {
     title: 'Components/TextArea',
@@ -185,40 +186,47 @@ TsTextArea.args = {
 }
 
 export const Skeleton = () => html`
-<div style='display: flex; flex-direction: column; gap: 20px'>
-    <ts-skeleton width='120' height='20'></ts-skeleton>
-    <ts-skeleton width='420' height='165'></ts-skeleton>
-    <div style='display: flex; justify-content: space-between;'>
-        <ts-skeleton width='80' height='20'></ts-skeleton>
-        <ts-skeleton width='80' height='20'></ts-skeleton>
-    </div>
-</div>
+<ts-skeleton display='flex-column' gap='20'>
+    <ts-skeleton-item width='120' height='20'></ts-skeleton-item>
+    <ts-skeleton-item width='420' height='165'></ts-skeleton-item>
+</ts-skeleton>
+<ts-skeleton 
+display='flex-row' 
+justify-content='space-between'
+gap='0'>
+    <ts-skeleton-item width='80' height='20'></ts-skeleton-item>
+    <ts-skeleton-item width='80' height='20'></ts-skeleton-item>
+</ts-skeleton>
 `;
 
 Skeleton.story = {
     title: "Components/TsTextArea/Skeleton",
     component: "ts-skeleton",
     parameters: {
-      options: {
-        showPanel: false,
-      },
-      docs: {
-        storyDescription: "This is a skeleton of a textarea component.",
-        source: {
-          code: `
+        options: {
+            showPanel: false,
+        },
+        docs: {
+            storyDescription: "This is a skeleton of a textarea component.",
+            source: {
+                code: `
 import '@transdevoficial/ts-ds-core/dist/components/ts-skeleton';
+import '@transdevoficial/ts-ds-core/dist/components/ts-skeleton/ts-skeleton-item';
   
-<div style='display: flex; flex-direction: column; gap: 20px'>
-    <ts-skeleton width='120' height='20'></ts-skeleton>
-    <ts-skeleton width='420' height='165'></ts-skeleton>
-    <div style='display: flex; justify-content: space-between;'>
-      <ts-skeleton width='80' height='20'></ts-skeleton>
-      <ts-skeleton width='80' height='20'></ts-skeleton>
-    </div>
-</div>
+<ts-skeleton display='flex-column' gap='20'>
+    <ts-skeleton-item width='120' height='20'></ts-skeleton-item>
+    <ts-skeleton-item width='420' height='165'></ts-skeleton-item>
+</ts-skeleton>
+<ts-skeleton 
+display='flex-row' 
+justify-content='space-between'
+gap='0'>
+    <ts-skeleton-item width='80' height='20'></ts-skeleton-item>
+    <ts-skeleton-item width='80' height='20'></ts-skeleton-item>
+</ts-skeleton>
                   `,
-  
+
+            }
         }
-      }
     },
-  }
+}
