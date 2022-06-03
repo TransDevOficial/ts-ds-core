@@ -6,6 +6,9 @@ export default {
   title: "Components/Button",
   component: "ts-button",
   parameters: {
+    options: {
+      showPanel: true,
+    },
     actions: {
       handles: ["ts-button-click"],
     },
@@ -161,3 +164,28 @@ TsButton.args = {
 export const Skeleton = (args) => html`
 <ts-skeleton width='120' height='40' format=${args.format}></ts-skeleton>
 `;
+
+Skeleton.story = {
+  title: "Components/TsButton/Skeleton",
+  component: "ts-skeleton",
+  parameters: {
+    options: {
+      showPanel: false,
+    },
+    docs: {
+      storyDescription: "This is a skeleton of a button component.",
+      source: {
+        code: `
+import '@transdevoficial/ts-ds-core/dist/components/ts-skeleton';
+
+<ts-skeleton 
+  width='120' 
+  height='40' 
+  format='flat'>
+</ts-skeleton>
+                `,
+
+      }
+    }
+  },
+}

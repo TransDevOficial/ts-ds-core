@@ -6,6 +6,9 @@ export default {
     title: 'Components/TsButton/ButtonToggle',
     component: 'ts-button-toggle',
     parameters: {
+        options: {
+            showPanel: true,
+        },
         actions: {
             handles: ['ts-button-toggle-click'],
         },
@@ -123,9 +126,34 @@ TsButtonToggle.args = {
 }
 
 export const Skeleton = () => html`
+<div style='display: flex; flex-direction: column; gap: 20px;'>
     <ts-skeleton width="40" height="20" format="flat"></ts-skeleton>
-    <br>
     <ts-skeleton width="45" height="20" format="flat"></ts-skeleton>
-    <br>
     <ts-skeleton width="80" height="20" format="flat"></ts-skeleton>
+</div>
 `;
+
+Skeleton.story = {
+    title: "Components/TsButton/ButtonToggle/Skeleton",
+    component: "ts-skeleton",
+    parameters: {
+        options: {
+            showPanel: false,
+        },
+        docs: {
+            storyDescription: "This is a skeleton of a button toggle component.",
+            source: {
+                code: `
+import '@transdevoficial/ts-ds-core/dist/components/ts-skeleton';
+  
+<div style='display: flex; flex-direction: column; gap: 20px;'>
+    <ts-skeleton width="40" height="20" format="flat"></ts-skeleton>
+    <ts-skeleton width="45" height="20" format="flat"></ts-skeleton>
+    <ts-skeleton width="80" height="20" format="flat"></ts-skeleton>
+</div>
+                  `,
+
+            }
+        }
+    },
+}

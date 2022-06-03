@@ -6,6 +6,9 @@ export default {
   title: "Components/TsButton/ButtonGroup",
   component: "ts-button-group",
   parameters: {
+    options: {
+      showPanel: true,
+    },
     actions: {
       handles: ["ts-button-primary-click", "ts-button-secondary-click"],
     },
@@ -139,3 +142,27 @@ export const Skeleton = () => html`
 <ts-skeleton width='120' height='40'></ts-skeleton>
 </div>
 `;
+
+Skeleton.story = {
+  title: "Components/TsButton/ButtonGroup/Skeleton",
+  component: "ts-skeleton",
+  parameters: {
+    docs: {
+      storyDescription:
+        "This is a skeleton of a button group component.",
+      source: {
+        code: `
+import '@transdevoficial/ts-ds-core/dist/components/ts-skeleton';
+
+<div style='display: flex; gap: 20px;'>
+  <ts-skeleton width='120' height='40'></ts-skeleton>
+  <ts-skeleton width='120' height='40'></ts-skeleton>
+</div>
+          `,
+      }
+    },
+    options: {
+      showPanel: false,
+    }
+  },
+};
