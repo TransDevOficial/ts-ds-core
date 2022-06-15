@@ -32,6 +32,7 @@ import "@transdevoficial/ts-ds-core/dist/components/ts-textarea";
     disabled="boolean"
     inverse="boolean"
     only-text-area="boolean"
+    skeleton="boolean"
     @ts-textarea-count-change="event">
 </ts-textarea>
                 `,
@@ -147,6 +148,18 @@ import "@transdevoficial/ts-ds-core/dist/components/ts-textarea";
                 type: 'boolean',
             },
         },
+        skeleton: {
+            name: 'skeleton',
+            description: 'Skeleton state',
+            table: {
+                type: { summary: 'boolean' },
+                defaultValue: { summary: 'false' },
+                category: 'State',
+            },
+            control: {
+                type: 'boolean',
+            }
+        },
         'ts-textarea-count-change': {
             name: 'ts-textarea-count-change',
             description: 'Event dispatched when the textarea count changes',
@@ -170,6 +183,7 @@ export const TsTextArea = (args) => html`
         ?disabled=${args.disabled}
         ?inverse=${args.inverse}
         ?only-text-area=${args.onlyTextArea}
+        ?skeleton=${args.skeleton}
     ></ts-textarea>
 `;
 
@@ -183,20 +197,11 @@ TsTextArea.args = {
     disabled: false,
     inverse: false,
     onlyTextArea: false,
+    skeleton: false,
 }
 
 export const Skeleton = () => html`
-<ts-skeleton display='flex-column' gap='20'>
-    <ts-skeleton-item width='120' height='20'></ts-skeleton-item>
-    <ts-skeleton-item width='420' height='165'></ts-skeleton-item>
-</ts-skeleton>
-<ts-skeleton 
-display='flex-row' 
-justify-content='space-between'
-gap='0'>
-    <ts-skeleton-item width='80' height='20'></ts-skeleton-item>
-    <ts-skeleton-item width='80' height='20'></ts-skeleton-item>
-</ts-skeleton>
+    <ts-textarea skeleton></ts-textarea>
 `;
 
 Skeleton.story = {
@@ -207,23 +212,12 @@ Skeleton.story = {
             showPanel: false,
         },
         docs: {
-            storyDescription: "This is a skeleton of a textarea component.",
+            storyDescription: "This is a skeleton of a `ts-textarea` component.",
             source: {
                 code: `
-import '@transdevoficial/ts-ds-core/dist/components/ts-skeleton';
-import '@transdevoficial/ts-ds-core/dist/components/ts-skeleton/ts-skeleton-item';
-  
-<ts-skeleton display='flex-column' gap='20'>
-    <ts-skeleton-item width='120' height='20'></ts-skeleton-item>
-    <ts-skeleton-item width='420' height='165'></ts-skeleton-item>
-</ts-skeleton>
-<ts-skeleton 
-display='flex-row' 
-justify-content='space-between'
-gap='0'>
-    <ts-skeleton-item width='80' height='20'></ts-skeleton-item>
-    <ts-skeleton-item width='80' height='20'></ts-skeleton-item>
-</ts-skeleton>
+import "@transdevoficial/ts-ds-core/dist/components/ts-textarea";
+
+<ts-textarea skeleton></ts-textarea>
                   `,
 
             }

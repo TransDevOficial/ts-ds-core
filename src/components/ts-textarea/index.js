@@ -1,8 +1,9 @@
 import { html, LitElement, unsafeCSS } from "lit";
 import { classMap } from "lit/directives/class-map.js";
+import SkeletonFactory from "../utils/skeletonFactory";
 import styles from "./styles.scss";
 
-export class TsTextArea extends LitElement {
+export class TsTextArea extends SkeletonFactory {
     static get styles() {
         return unsafeCSS(styles);
     }
@@ -19,6 +20,7 @@ export class TsTextArea extends LitElement {
             disabled: { type: Boolean },
             inverse: { type: Boolean },
             onlyTextArea: { type: Boolean, attribute: "only-text-area" },
+            skeleton: { type: Boolean }
         }
     }
 
@@ -34,6 +36,7 @@ export class TsTextArea extends LitElement {
         this.disabled = false;
         this.inverse = false;
         this.onlyTextArea = false;
+        this.skeleton = false;
     }
 
     firstUpdated() {
@@ -52,6 +55,26 @@ export class TsTextArea extends LitElement {
                 count: this.count
             }
         }));
+    }
+
+    updated(changedProperties) {
+        if (changedProperties.has("skeleton")) {
+            if (this.skeleton) {
+                this.renderSkeleton([
+                    ".ts-textarea__label-text",
+                    ".ts-textarea__input",
+                    ".ts-textarea__info-message-text",
+                    ".ts-textarea__count",
+                ]);
+            } else {
+                this.removeSkeleton([
+                    ".ts-textarea__label-text",
+                    ".ts-textarea__input",
+                    ".ts-textarea__info-message-text",
+                    ".ts-textarea__count",
+                ]);
+            }
+        }
     }
 
     render() {
@@ -73,7 +96,11 @@ export class TsTextArea extends LitElement {
                 maxlength=${this.maxCount}
             ></textarea>
         ` : html`
-        <label for=${this.name} class='ts-textarea__label'>${this.label}</label>
+        <label for=${this.name} class='ts-textarea__label'>
+        <span class='ts-textarea__label-text'>
+        ${this.label}
+        </span>
+        </label>
                 <textarea
                     name=${this.name}
                     id=${this.id}
@@ -85,7 +112,7 @@ export class TsTextArea extends LitElement {
                     maxlength=${this.maxCount}
                 ></textarea>
                 <div class='ts-textarea__info-message'>
-                <span>
+                <span class="ts-textarea__info-message-text">
                 ${this.infoMessage}
                 </span>
                 <div class='${classMap({
