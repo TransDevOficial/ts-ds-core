@@ -164,8 +164,8 @@ import "@transdevoficial/ts-ds-core/dist/components/ts-textarea";
             name: 'ts-textarea-count-change',
             description: 'Event dispatched when the textarea count changes',
             table: {
-                type: { summary: 'object' },
-                defaultValue: { summary: '{}' },
+                type: { summary: 'Event' },
+                defaultValue: { summary: 'Event' },
                 category: 'Events',
             },
         },
