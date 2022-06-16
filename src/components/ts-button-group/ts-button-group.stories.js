@@ -1,9 +1,8 @@
 import { html } from "lit";
 import "./index.js";
-import '../ts-skeleton/index.js';
 
 export default {
-  title: "Components/TsButton/ButtonGroup",
+  title: "Components/Button/ButtonGroup",
   component: "ts-button-group",
   parameters: {
     options: {
@@ -27,6 +26,7 @@ import '@transdevoficial/ts-ds-core/dist/components/ts-button-group';
   button-primary-disabled="boolean"
   button-secondary-disabled="boolean"
   inverse="boolean"
+  skeleton="boolean"
   @ts-button-primary-click="event"
   @ts-button-secondary-click="event">
 </ts-button-group>
@@ -95,12 +95,21 @@ import '@transdevoficial/ts-ds-core/dist/components/ts-button-group';
         type: "boolean",
       },
     },
+    skeleton: {
+      name: "skeleton",
+      description: "Skeleton state of the button",
+      table: {
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+        category: "State",
+      },
+    },
     'ts-button-primary-click': {
       name: "ts-button-primary-click",
       description: "Event of the primary button",
       table: {
-        type: { summary: "object" },
-        defaultValue: { summary: "{}" },
+        type: { summary: "Event" },
+        defaultValue: { summary: "Event" },
         category: "Events",
       },
     },
@@ -108,8 +117,8 @@ import '@transdevoficial/ts-ds-core/dist/components/ts-button-group';
       name: "ts-button-secondary-click",
       description: "Event of the secondary button",
       table: {
-        type: { summary: "object" },
-        defaultValue: { summary: "{}" },
+        type: { summary: "Event" },
+        defaultValue: { summary: "Event" },
         category: "Events",
       },
     },
@@ -123,6 +132,7 @@ export const TsButtonGroup = (args) => html`
     ?button-primary-disabled=${args.buttonPrimaryDisabled}
     ?button-secondary-disabled=${args.buttonSecondaryDisabled}
     ?inverse=${args.inverse}
+    ?skeleton=${args.skeleton}
     @ts-button-primary-click=${args['ts-button-primary-click']}
     @ts-button-secondary-click=${args['ts-button-secondary-click']}
   ></ts-button-group>
@@ -134,17 +144,15 @@ TsButtonGroup.args = {
   buttonPrimaryDisabled: false,
   buttonSecondaryDisabled: false,
   inverse: false,
+  skeleton: false
 };
 
 export const Skeleton = () => html`
-<div style='display: flex; gap: 20px;'>
-<ts-skeleton width='120' height='40'></ts-skeleton>
-<ts-skeleton width='120' height='40'></ts-skeleton>
-</div>
+  <ts-button-group skeleton></ts-button-group>
 `;
 
 Skeleton.story = {
-  title: "Components/TsButton/ButtonGroup/Skeleton",
+  title: "Components/TsButtonGroup/Skeleton",
   component: "ts-skeleton",
   parameters: {
     docs: {
@@ -152,12 +160,9 @@ Skeleton.story = {
         "This is a skeleton of a button group component.",
       source: {
         code: `
-import '@transdevoficial/ts-ds-core/dist/components/ts-skeleton';
+import '@transdevoficial/ts-ds-core/dist/components/ts-button-group';
 
-<div style='display: flex; gap: 20px;'>
-  <ts-skeleton width='120' height='40'></ts-skeleton>
-  <ts-skeleton width='120' height='40'></ts-skeleton>
-</div>
+<ts-button-group skeleton></ts-button-group>
           `,
       }
     },

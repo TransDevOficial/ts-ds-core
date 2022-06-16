@@ -24,6 +24,7 @@ export class TsButtonGroup extends LitElement {
         attribute: "button-secondary-disabled",
       },
       inverse: { type: Boolean },
+      skeleton: { type: Boolean },
     };
   }
 
@@ -34,6 +35,7 @@ export class TsButtonGroup extends LitElement {
     this.buttonPrimaryDisabled = false;
     this.buttonSecondaryDisabled = false;
     this.inverse = false;
+    this.skeleton = false;
   }
 
   _tsHandleButtonPrimaryClick() {
@@ -71,17 +73,19 @@ export class TsButtonGroup extends LitElement {
     })}
       >
       <ts-button
+          variant="secondary"
           label=${this.buttonSecondaryLabel}
           ?disabled=${this.buttonSecondaryDisabled}
           ?inverse=${this.inverse}
-          variant="secondary"
+          ?skeleton=${this.skeleton}
           @ts-button-click=${this._tsHandleButtonSecondaryClick}
-        >
+          >
         </ts-button>
         <ts-button
-          label=${this.buttonPrimaryLabel}
+        label=${this.buttonPrimaryLabel}
           ?disabled=${this.buttonPrimaryDisabled}
           ?inverse=${this.inverse}
+          ?skeleton=${this.skeleton}
           @ts-button-click=${this._tsHandleButtonPrimaryClick}
         >
         </ts-button>

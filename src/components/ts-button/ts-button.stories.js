@@ -3,7 +3,7 @@ import { html } from "lit";
 import '../ts-skeleton/index.js';
 
 export default {
-  title: "Components/Button/TsButton",
+  title: "Components/Button",
   component: "ts-button",
   parameters: {
     options: {
