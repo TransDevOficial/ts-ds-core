@@ -3,7 +3,7 @@ import { html } from "lit";
 import '../ts-skeleton/index.js';
 
 export default {
-  title: "Components/Button",
+  title: "Components/Button/TsButton",
   component: "ts-button",
   parameters: {
     options: {
@@ -29,6 +29,7 @@ import '@transdevoficial/ts-ds-core/dist/components/ts-button';
   disabled="boolean"
   loading="boolean"
   inverse="boolean"
+  skeleton="boolean"
   @ts-button-click="event">
 </ts-button>
                 `,
@@ -44,9 +45,14 @@ import '@transdevoficial/ts-ds-core/dist/components/ts-button';
         defaultValue: { summary: "medium" },
         category: "Appearance",
       },
+      options: ["small", "medium", "large"],
       control: {
         type: "select",
-        options: ["small", "medium", "large"],
+        labels: {
+          small: "Small",
+          medium: "Medium",
+          large: "Large",
+        }
       },
     },
     variant: {
@@ -57,9 +63,16 @@ import '@transdevoficial/ts-ds-core/dist/components/ts-button';
         defaultValue: { summary: "primary" },
         category: "Appearance",
       },
+      options: ["primary", "secondary", "danger", "success", "warning"],
       control: {
         type: "select",
-        options: ["primary", "secondary", "danger", "success", "warning"],
+        labels: {
+          primary: "Primary",
+          secondary: "Secondary",
+          danger: "Danger",
+          success: "Success",
+          warning: "Warning",
+        }
       },
     },
     format: {
@@ -70,9 +83,13 @@ import '@transdevoficial/ts-ds-core/dist/components/ts-button';
         defaultValue: { summary: "flat" },
         category: "Appearance",
       },
+      options: ["flat", "rounded"],
       control: {
         type: "select",
-        options: ["flat", "rounded"],
+        labels: {
+          flat: "Flat",
+          rounded: "Rounded",
+        }
       },
     },
     label: {
@@ -123,17 +140,23 @@ import '@transdevoficial/ts-ds-core/dist/components/ts-button';
         type: "boolean",
       },
     },
+    skeleton: {
+      name: "skeleton",
+      description: "Skeleton state of the button",
+      table: {
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+        category: "State",
+      },
+    },
     "ts-button-click": {
       name: "ts-button-click",
       description: "Event dispatched when the button is clicked",
       table: {
-        type: { summary: "object" },
-        defaultValue: { summary: "{}" },
+        type: { summary: "Event" },
+        defaultValue: { summary: "Event" },
         category: "Events",
-      },
-      control: {
-        type: "event",
-      },
+      }
     },
   },
 };
@@ -147,6 +170,7 @@ export const TsButton = (args) => html`
     ?disabled=${args.disabled}
     ?loading=${args.loading}
     ?inverse=${args.inverse}
+    ?skeleton=${args.skeleton}
     @ts-button-click=${args["ts-button-click"]}
   ></ts-button>
 `;
@@ -159,10 +183,11 @@ TsButton.args = {
   disabled: false,
   loading: false,
   inverse: false,
+  skeleton: false,
 };
 
-export const Skeleton = (args) => html`
-<ts-skeleton width='120' height='40' format=${args.format}></ts-skeleton>
+export const Skeleton = () => html`
+  <ts-button skeleton></ts-button>
 `;
 
 Skeleton.story = {
@@ -176,13 +201,9 @@ Skeleton.story = {
       storyDescription: "This is a skeleton of a button component.",
       source: {
         code: `
-import '@transdevoficial/ts-ds-core/dist/components/ts-skeleton';
+import '@transdevoficial/ts-ds-core/dist/components/ts-button';
 
-<ts-skeleton 
-  width='120' 
-  height='40' 
-  format='flat'>
-</ts-skeleton>
+<ts-button skeleton></ts-button>
                 `,
 
       }

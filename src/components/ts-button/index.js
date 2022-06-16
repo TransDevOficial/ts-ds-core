@@ -1,8 +1,9 @@
-import { html, LitElement, unsafeCSS } from "lit";
+import { html, unsafeCSS } from "lit";
 import { classMap } from "lit-html/directives/class-map.js";
+import SkeletonFactory from "../utils/skeletonFactory";
 import styles from "./style.scss";
 
-export class TsButton extends LitElement {
+export class TsButton extends SkeletonFactory {
   static get styles() {
     return unsafeCSS(styles);
   }
@@ -16,6 +17,7 @@ export class TsButton extends LitElement {
       disabled: { type: Boolean },
       loading: { type: Boolean },
       inverse: { type: Boolean },
+      skeleton: { type: Boolean },
     };
   }
 
@@ -28,6 +30,17 @@ export class TsButton extends LitElement {
     this.disabled = false;
     this.loading = false;
     this.inverse = false;
+    this.skeleton = false;
+  }
+
+  updated(changedProperties) {
+    if (changedProperties.has("skeleton")) {
+      if (this.skeleton) {
+        this.renderSkeleton(".ts-button");
+      } else {
+        this.removeSkeleton(".ts-button");
+      }
+    }
   }
 
   _tsHandleButtonClick() {
@@ -77,6 +90,6 @@ export class TsButton extends LitElement {
   }
 }
 
-if(!customElements.get("ts-button")) {
+if (!customElements.get("ts-button")) {
   customElements.define("ts-button", TsButton);
 }
