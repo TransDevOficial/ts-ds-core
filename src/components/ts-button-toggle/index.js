@@ -1,8 +1,9 @@
-import { html, LitElement, unsafeCSS } from "lit";
+import { html, unsafeCSS } from "lit";
 import { classMap } from "lit/directives/class-map.js";
 import styles from "./styles.scss";
+import SkeletonFactory from "../utils/skeletonFactory";
 
-export class TsButtonToggle extends LitElement {
+export class TsButtonToggle extends SkeletonFactory {
     static get styles() {
         return unsafeCSS(styles)
     }
@@ -14,6 +15,7 @@ export class TsButtonToggle extends LitElement {
             checked: { type: Boolean },
             disabled: { type: Boolean },
             inverse: { type: Boolean },
+            skeleton: { type: Boolean },
         }
     }
 
@@ -24,6 +26,26 @@ export class TsButtonToggle extends LitElement {
         this.checked = false;
         this.disabled = false;
         this.inverse = false;
+        this.skeleton = false;
+    }
+
+    updated(changedProperties) {
+
+        let skeletonElement = [
+            ".ts-button-toggle__label-text",
+            ".ts-button-toggle__state-label",
+            {
+                component: ".ts-button-toggle__button",
+                format: "rounded"
+            }];
+
+        if (changedProperties.has("skeleton")) {
+            if (this.skeleton) {
+                this.renderSkeleton(skeletonElement);
+            } else {
+                this.removeSkeleton(skeletonElement);
+            }
+        }
     }
 
     _tsHandleButtonToggleClick() {

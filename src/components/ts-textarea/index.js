@@ -64,7 +64,7 @@ export class TsTextArea extends SkeletonFactory {
                     ".ts-textarea__label-text",
                     ".ts-textarea__input",
                     ".ts-textarea__info-message-text",
-                    ".ts-textarea__count",
+                    ".ts-textarea__count"
                 ]);
             } else {
                 this.removeSkeleton([

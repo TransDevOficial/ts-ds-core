@@ -36,9 +36,9 @@ export class TsButton extends SkeletonFactory {
   updated(changedProperties) {
     if (changedProperties.has("skeleton")) {
       if (this.skeleton) {
-        this.renderSkeleton(".ts-button");
+        this.renderSkeleton(".ts-button__button");
       } else {
-        this.removeSkeleton(".ts-button");
+        this.removeSkeleton(".ts-button__button");
       }
     }
   }

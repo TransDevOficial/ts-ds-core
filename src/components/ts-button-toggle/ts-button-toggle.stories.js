@@ -1,9 +1,8 @@
 import { html } from 'lit';
 import './index.js';
-import '../ts-skeleton/index.js';
 
 export default {
-    title: 'Components/TsButton/ButtonToggle',
+    title: 'Components/Button/ButtonToggle',
     component: 'ts-button-toggle',
     parameters: {
         options: {
@@ -28,6 +27,7 @@ import "@transdevoficial/ts-ds-core/dist/components/ts-button-toggle";
     checked="boolean"
     disabled="boolean"
     inverse="boolean"
+    skeleton="boolean"
     @ts-button-toggle-click="event">
 </ts-button-toggle>
                 `,
@@ -95,12 +95,24 @@ import "@transdevoficial/ts-ds-core/dist/components/ts-button-toggle";
                 type: 'boolean',
             },
         },
+        skeleton: {
+            name: 'skeleton',
+            description: 'Skeleton state of the button',
+            table: {
+                type: { summary: 'boolean' },
+                defaultValue: { summary: 'false' },
+                category: 'State',
+            },
+            control: {
+                type: 'boolean',
+            },
+        },
         'ts-button-toggle-click': {
             name: 'ts-button-toggle-click',
             description: 'Event emitted when the button is clicked',
             table: {
-                type: { summary: 'object' },
-                defaultValue: { summary: '{}' },
+                type: { summary: 'Event' },
+                defaultValue: { summary: 'Event' },
                 category: 'Events',
             },
         },
@@ -114,6 +126,8 @@ export const TsButtonToggle = (args) => html`
         ?checked=${args.checked}
         ?disabled=${args.disabled}
         ?inverse=${args.inverse}
+        ?skeleton=${args.skeleton}
+        @ts-button-toggle-click=${args['ts-button-toggle-click']}>
     ></ts-button-toggle>
 `;
 
@@ -123,18 +137,15 @@ TsButtonToggle.args = {
     checked: false,
     disabled: false,
     inverse: false,
+    skeleton: false,
 }
 
 export const Skeleton = () => html`
-<div style='display: flex; flex-direction: column; gap: 20px;'>
-    <ts-skeleton width="40" height="20" format="flat"></ts-skeleton>
-    <ts-skeleton width="45" height="20" format="flat"></ts-skeleton>
-    <ts-skeleton width="80" height="20" format="flat"></ts-skeleton>
-</div>
+    <ts-button-toggle skeleton></ts-button-toggle>
 `;
 
 Skeleton.story = {
-    title: "Components/TsButton/ButtonToggle/Skeleton",
+    title: "Components/TsButton/Skeleton",
     component: "ts-skeleton",
     parameters: {
         options: {
@@ -144,13 +155,9 @@ Skeleton.story = {
             storyDescription: "This is a skeleton of a button toggle component.",
             source: {
                 code: `
-import '@transdevoficial/ts-ds-core/dist/components/ts-skeleton';
-  
-<div style='display: flex; flex-direction: column; gap: 20px;'>
-    <ts-skeleton width="40" height="20" format="flat"></ts-skeleton>
-    <ts-skeleton width="45" height="20" format="flat"></ts-skeleton>
-    <ts-skeleton width="80" height="20" format="flat"></ts-skeleton>
-</div>
+import '@transdevoficial/ts-ds-core/dist/components/ts-button-toggle';
+
+<ts-button-toggle skeleton></ts-button-toggle>
                   `,
 
             }

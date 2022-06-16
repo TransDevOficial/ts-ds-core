@@ -16,9 +16,17 @@ export default class SkeletonFactory extends LitElement {
 
     getDimentions(element) {
         let sourceElement = this.getSourceElement(element);
+        let sourceElementStyle = sourceElement.currentStyle || window.getComputedStyle(sourceElement);
+
         return this.dimentions = {
             width: sourceElement.offsetWidth,
-            height: sourceElement.offsetHeight
+            height: sourceElement.offsetHeight,
+            margins: {
+                top: parseInt(sourceElementStyle.marginTop),
+                right: parseInt(sourceElementStyle.marginRight),
+                bottom: parseInt(sourceElementStyle.marginBottom),
+                left: parseInt(sourceElementStyle.marginLeft),
+            },
         };
     }
 
@@ -29,6 +37,7 @@ export default class SkeletonFactory extends LitElement {
         skeleton.setAttribute('width', dimentions.width);
         skeleton.setAttribute('height', dimentions.height);
         skeleton.setAttribute('format', skeletonFormat ? skeletonFormat : 'flat');
+        skeleton.setAttribute('style', `margin: ${dimentions.margins.top}px ${dimentions.margins.right}px ${dimentions.margins.bottom}px ${dimentions.margins.left}px`);
 
         return skeleton;
     }
@@ -36,21 +45,25 @@ export default class SkeletonFactory extends LitElement {
     renderSkeleton(element) {
         let sourceElement;
         let skeletonElement;
-        
+
         if (typeof element === 'object') {
             element.forEach(e => {
                 try {
-                    sourceElement = this.getSourceElement(e);
-                    skeletonElement = this.createNewSkeleton(e);
+                    if (typeof e === 'string') {
+                        sourceElement = this.getSourceElement(e);
+                        skeletonElement = this.createNewSkeleton(e);
+                    } else {
+                        sourceElement = this.getSourceElement(e.component);
+                        skeletonElement = this.createNewSkeleton(e.component, e.format);
+                    }
                 } catch (error) {
                     console.warn("Error: One or more elements can't be parsed: ", error);
                     return;
                 }
+
                 return sourceElement.style.display = 'none', sourceElement.parentNode.insertBefore(skeletonElement, sourceElement);
             })
-
-        } else {
-            console.log('elemento de origem é um elemento ===> ', element);
+        } else if (typeof element === 'string') {
             sourceElement = this.getSourceElement(element);
             skeletonElement = this.createNewSkeleton(element);
 
@@ -65,22 +78,30 @@ export default class SkeletonFactory extends LitElement {
         if (typeof element === 'object') {
             element.forEach(e => {
                 try {
-                    skeletonElement = this.getSourceElement('ts-skeleton-item');
-                    sourceElement = this.getSourceElement(e);
+                    if (typeof e === 'string') {
+                        skeletonElement = this.getSourceElement("ts-skeleton-item");
+                        sourceElement = this.getSourceElement(e);
+                    } else {
+                        skeletonElement = this.getSourceElement('ts-skeleton-item');
+                        sourceElement = this.getSourceElement(e.component);
+                    }
                 } catch (error) {
                     console.warn("Error: One or more elements can't be parsed: ", error);
                     return;
                 }
-
                 if (!sourceElement || !skeletonElement) {
                     return;
                 }
 
                 return skeletonElement.remove(), sourceElement.style = '';
             });
-        } else {
+        } else if (typeof element === 'string') {
             skeletonElement = this.shadowRoot.querySelector('ts-skeleton-item');
             sourceElement = this.getSourceElement(element);
+
+            if (!sourceElement || !skeletonElement) {
+                return;
+            }
 
             return skeletonElement.remove(), sourceElement.style = '';
         }

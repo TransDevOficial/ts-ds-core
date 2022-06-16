@@ -1,9 +1,10 @@
-import { html, LitElement, unsafeCSS } from "lit";
+import { html, unsafeCSS } from "lit";
 import styles from './styles.scss';
 import '../ts-icon/index.js';
 import { classMap } from "lit/directives/class-map.js";
+import SkeletonFactory from "../utils/skeletonFactory";
 
-export class TsButtonIcon extends LitElement {
+export class TsButtonIcon extends SkeletonFactory {
     static get styles() {
         return unsafeCSS(styles)
     }
@@ -17,6 +18,7 @@ export class TsButtonIcon extends LitElement {
             labeled: { type: Boolean },
             disabled: { type: Boolean },
             inverse: { type: Boolean },
+            skeleton: { type: Boolean },
         }
     }
 
@@ -29,6 +31,23 @@ export class TsButtonIcon extends LitElement {
         this.labeled = false;
         this.disabled = false;
         this.inverse = false;
+        this.skeleton = false;
+    }
+
+    updated(changedProperties) {
+
+        let skeletonElement = [
+            ".ts-button-icon__button",
+            ".ts-button-icon__label",
+        ]
+
+        if (changedProperties.has('skeleton')) {
+            if (this.skeleton) {
+                this.renderSkeleton(skeletonElement);
+            } else {
+                this.removeSkeleton(skeletonElement);
+            }
+        }
     }
 
     _tsHandleButtonIconClick() {
@@ -62,9 +81,11 @@ export class TsButtonIcon extends LitElement {
         })}' @click=${this._tsHandleButtonIconClick}>
             <ts-icon src=${this.iconSrc} size=${this.size} ?inverse=${this.inverse}></ts-icon>
         </button>
-                ${this.labeled ? html`
+        <div class="ts-button-icon__label">
+             ${this.labeled ? html`
                 <span>${this.label}</span>
-                ` : ''}
+            ` : ''}
+        </div>
         </div>
         `;
     }

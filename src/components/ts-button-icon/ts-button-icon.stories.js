@@ -4,7 +4,7 @@ import * as icons from '@transdevoficial/ds-assets/dist/assets/icons/index.js';
 import '../ts-skeleton/index.js';
 
 export default {
-    title: 'Components/TsButton/ButtonIcon',
+    title: 'Components/Button/ButtonIcon',
     component: 'ts-button-icon',
     parameters: {
         options: {
@@ -29,6 +29,7 @@ import '@transdevoficial/ts-ds-core/dist/components/ts-button-icon';
     labeled="boolean"
     disabled="boolean"
     inverse="boolean"
+    skeleton="boolean"
     @ts-button-icon-click="event">
 </ts-button-icon>
                 `
@@ -66,9 +67,14 @@ import '@transdevoficial/ts-ds-core/dist/components/ts-button-icon';
                 defaultValue: { summary: 'medium' },
                 category: 'Appearance'
             },
+            options: ['small', 'medium', 'large'],
             control: {
                 type: 'select',
-                options: ['small', 'medium', 'large']
+                labels: {
+                    small: 'Small',
+                    medium: 'Medium',
+                    large: 'Large'
+                }
             }
         },
         variant: {
@@ -79,9 +85,16 @@ import '@transdevoficial/ts-ds-core/dist/components/ts-button-icon';
                 defaultValue: { summary: 'primary' },
                 category: 'Appearance'
             },
+            options: ['primary', 'secondary', 'danger', 'success', 'warning'],
             control: {
                 type: 'select',
-                options: ['primary', 'secondary', 'danger', 'success', 'warning'],
+                labels: {
+                    primary: 'Primary',
+                    secondary: 'Secondary',
+                    danger: 'Danger',
+                    success: 'Success',
+                    warning: 'Warning'
+                }
             }
         },
         labeled: {
@@ -120,12 +133,24 @@ import '@transdevoficial/ts-ds-core/dist/components/ts-button-icon';
                 type: 'boolean'
             }
         },
+        skeleton: {
+            name: 'skeleton',
+            description: 'Skeleton state of button',
+            table: {
+                type: { summary: 'boolean' },
+                defaultValue: { summary: 'false' },
+                category: 'State'
+            },
+            control: {
+                type: 'boolean'
+            }
+        },
         'ts-button-icon-click': {
             name: 'ts-button-icon-click',
             description: 'Custom event',
             table: {
                 type: { summary: 'Event' },
-                defaultValue: { summary: '{}' },
+                defaultValue: { summary: 'Event' },
                 category: 'Events'
             }
         }
@@ -141,6 +166,7 @@ export const TsButtonIcon = (args) => html`
         ?labeled=${args.labeled}
         ?disabled=${args.disabled}
         ?inverse=${args.inverse}
+        ?skeleton=${args.skeleton}
         @ts-button-icon-click=${args['ts-button-icon-click']}>
     ></ts-button-icon>
 `;
@@ -153,14 +179,15 @@ TsButtonIcon.args = {
     labeled: false,
     disabled: false,
     inverse: false,
+    skeleton: false,
 };
 
 export const Skeleton = () => html`
-<ts-skeleton width='40' height='40' format='rounded'></ts-skeleton>
+<ts-button-icon skeleton></ts-button-icon>
 `;
 
 Skeleton.story = {
-    title: "Components/TsButton/ButtonIcon/Skeleton",
+    title: "Components/TsButton/Skeleton",
     component: "ts-skeleton",
     parameters: {
         options: {
@@ -170,9 +197,9 @@ Skeleton.story = {
             storyDescription: "This is a skeleton of a button icon component.",
             source: {
                 code: `
-import '@transdevoficial/ts-ds-core/dist/components/ts-skeleton';
+import '@transdevoficial/ts-ds-core/dist/components/ts-button-icon';
   
-<ts-skeleton width='40' height='40' format='rounded'></ts-skeleton>
+<ts-button-icon skeleton></ts-button-icon>
                   `,
 
             }
