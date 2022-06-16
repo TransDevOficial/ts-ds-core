@@ -46,7 +46,7 @@ export default class SkeletonFactory extends LitElement {
                     console.warn("Error: One or more elements can't be parsed: ", error);
                     return;
                 }
-                return sourceElement.style = ['position: absolute; top: -9999px; left: -9999px;'], sourceElement.parentNode.insertBefore(skeletonElement, sourceElement);
+                return sourceElement.style.display = 'none', sourceElement.parentNode.insertBefore(skeletonElement, sourceElement);
             })
 
         } else {
@@ -54,7 +54,7 @@ export default class SkeletonFactory extends LitElement {
             sourceElement = this.getSourceElement(element);
             skeletonElement = this.createNewSkeleton(element);
 
-            return sourceElement.style = ['position: absolute; top: -9999px; left: -9999px;'], sourceElement.parentNode.insertBefore(skeletonElement, sourceElement);
+            return sourceElement.style.display = 'none', sourceElement.parentNode.insertBefore(skeletonElement, sourceElement);
         }
     }
 
@@ -64,7 +64,6 @@ export default class SkeletonFactory extends LitElement {
 
         if (typeof element === 'object') {
             element.forEach(e => {
-
                 try {
                     skeletonElement = this.getSourceElement('ts-skeleton-item');
                     sourceElement = this.getSourceElement(e);
@@ -77,13 +76,13 @@ export default class SkeletonFactory extends LitElement {
                     return;
                 }
 
-                return skeletonElement.remove(), sourceElement.style = ['position: relative; top: 0; left: 0;']
+                return skeletonElement.remove(), sourceElement.style = '';
             });
         } else {
             skeletonElement = this.shadowRoot.querySelector('ts-skeleton-item');
             sourceElement = this.getSourceElement(element);
 
-            return skeletonElement.remove(), sourceElement.style = ['position: relative; top: 0; left: 0;']
+            return skeletonElement.remove(), sourceElement.style = '';
         }
     }
 }
