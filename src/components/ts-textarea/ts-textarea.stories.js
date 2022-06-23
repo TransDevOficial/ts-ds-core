@@ -212,7 +212,9 @@ Skeleton.story = {
             showPanel: false,
         },
         docs: {
-            storyDescription: "This is a skeleton of a `ts-textarea` component.",
+            description: {
+                story: "This is a skeleton of a `ts-textarea` component.",
+            },
             source: {
                 code: `
 import "@transdevoficial/ts-ds-core/dist/components/ts-textarea";
