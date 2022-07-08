@@ -13,6 +13,7 @@ export class TsIcon extends RenderSvg {
     return {
       src: { type: String },
       size: { type: String },
+      color: { type: String },
       inverse: { type: Boolean },
     };
   }
@@ -21,7 +22,13 @@ export class TsIcon extends RenderSvg {
     super();
     this.src = "";
     this.size = "medium";
+    this.color = "";
     this.inverse = false;
+  }
+
+  setColor() {
+    this.inverse && !this.color ? (this.color = "") : null;
+    return this.color;
   }
 
   render() {
@@ -33,6 +40,7 @@ export class TsIcon extends RenderSvg {
       [`ts-icon--${this.size}`]: this.size,
       "ts-icon--inverse": this.inverse,
     })}"
+    style="color: ${this.setColor()}"
       >
         ${this.renderSvg()}
       </div>

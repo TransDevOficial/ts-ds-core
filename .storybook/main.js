@@ -2,8 +2,18 @@ const webpackBase = require("../webpack.config");
 const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-  stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
-  addons: ["@storybook/addon-links", "@storybook/addon-essentials", "@storybook/addon-actions"],
+  stories: [
+    "../src/**/*.stories.mdx", 
+    "../src/**/*.stories.@(js|jsx|ts|tsx)",
+    "../docs/**/*.stories.mdx",
+  ],
+  addons: [
+    "@storybook/addon-links", 
+    "@storybook/addon-essentials", 
+    "@storybook/addon-actions", 
+    "@storybook/addon-a11y",
+    "@storybook/addon-docs"
+  ],
   framework: "@storybook/web-components",
   core: {
     builder: "webpack5",

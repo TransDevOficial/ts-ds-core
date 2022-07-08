@@ -18,6 +18,7 @@ import '@transdevoficial/ts-ds-core/dist/components/ts-icon';
 <ts-icon
   src="string"
   size="string"
+  color="string"
   inverse="boolean">
 </ts-icon>
                 `,
@@ -51,6 +52,18 @@ import '@transdevoficial/ts-ds-core/dist/components/ts-icon';
         options: ["small", "medium", "large"],
       },
     },
+    color: {
+      name: "color",
+      description: "Color of the icon",
+      table: {
+        type: { summary: "string" },
+        defaultValue: { summary: "default" },
+        category: "Appearance",
+      },
+      control: {
+        type: "color"
+      },
+    },
     inverse: {
       name: "inverse",
       description: "Inverse the icon",
@@ -70,6 +83,7 @@ export const TsIcon = (args) => html`
   <ts-icon
     src="${icons[args.src]}"
     size="${args.size}"
+    color="${args.color}"
     ?inverse="${args.inverse}"
   ></ts-icon>
 `;
@@ -77,5 +91,6 @@ export const TsIcon = (args) => html`
 TsIcon.args = {
   src: "",
   size: "medium",
+  color: "",
   inverse: false,
 };

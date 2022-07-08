@@ -1,4 +1,5 @@
 import { create } from '@storybook/theming/create.js';
+import { version } from "../package.json";
 import logo from './transdev-negativo.svg';
 
 export default create({
@@ -12,7 +13,7 @@ export default create({
     inputBg: '#0d0126',
     inputBorder: '#f263c0',
     inputTextColor: '#f2f2f2',
-    brandTitle: 'Ts Design System',
+    brandTitle: `Ts Design System v${version}`,
     brandUrl: '/',
     brandImage: logo,
     brandTarget: '_self',

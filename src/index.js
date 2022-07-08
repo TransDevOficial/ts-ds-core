@@ -1,20 +1,39 @@
-import "./components/ts-brand";
-import "./components/ts-button";
-import "./components/ts-button-group";
-import "./components/ts-button-icon";
-import "./components/ts-button-toggle";
-import "./components/ts-checkbox";
-import "./components/ts-check-icon-button";
-import "./components/ts-heading";
-import "./components/ts-icon";
-import "./components/ts-link";
-import "./components/ts-paragraph";
-import "./components/ts-select";
-import "./components/ts-select/ts-select-option";
-import "./components/ts-skeleton";
-import "./components/ts-skeleton/ts-skeleton-item";
-import "./components/ts-subtitle";
-import "./components/ts-textarea";
-import "./components/ts-tooltip";
-import "./components/ts-tooltip/ts-tooltip-description";
-import "./components/ts-icon-tooltip";
+import TsBrand from './components/ts-brand';
+import TsButton from './components/ts-button';
+import TsButtonGroup from './components/ts-button-group';
+import TsButtonIcon from './components/ts-button-icon';
+import TsButtonToggle from './components/ts-button-toggle';
+import TsCheckIconButton from './components/ts-check-icon-button';
+import TsCheckbox from './components/ts-checkbox';
+import TsHeading from './components/ts-heading';
+import TsIcon from './components/ts-icon';
+import TsIconTooltip from './components/ts-icon-tooltip';
+import TsLink from './components/ts-link';
+import TsList from './components/ts-list';
+import TsParagraph from './components/ts-paragraph';
+import TsSelect from './components/ts-select';
+import TsSkeleton from './components/ts-skeleton';
+import TsSubtitle from './components/ts-subtitle';
+import TsTextArea from './components/ts-textarea/';
+import TsTooltip from './components/ts-tooltip';
+
+export { 
+    TsBrand, 
+    TsButton, 
+    TsButtonGroup, 
+    TsButtonIcon, 
+    TsButtonToggle,
+    TsCheckIconButton,
+    TsCheckbox,
+    TsHeading,
+    TsIcon,
+    TsIconTooltip,
+    TsLink,
+    TsList,
+    TsParagraph,
+    TsSelect,
+    TsSkeleton,
+    TsSubtitle,
+    TsTextArea,
+    TsTooltip,
+ };
