@@ -57,9 +57,9 @@ export class TsLink extends LitElement {
         })}>
             <a class='ts-link__link' href=${this.link} target=${this.target} @click=${this._handleTsLinkClick}>
             ${this.withIcon ? html`
-            <span>${this.label}</span><ts-icon src=${this.iconSrc} size='small' ?inverse=${this.inverse}></ts-icon>
+            <span>${this.label || "Link"}</span><ts-icon src=${this.iconSrc} size='small' ?inverse=${this.inverse}></ts-icon>
             ` : html`
-            <span>${this.label}</span>
+            <span>${this.label || "Link"}</span>
             `}
             </a>
         </div>

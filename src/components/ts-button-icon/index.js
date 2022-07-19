@@ -74,18 +74,19 @@ export class TsButtonIcon extends SkeletonFactory {
             [`ts-button-icon--inverse`]: this.inverse,
         })}'>
             
-        <button type='button' class='${classMap({
+        <button aria-label='button-icon' aria-labelledby='${this.label ? 'label' : 'icon'}' type='button' class='${classMap({
             'ts-button-icon__button': true,
             [`ts-button-icon__button--${this.variant}`]: this.variant,
             [`ts-button-icon__button--inverse`]: this.inverse,
-        })}' @click=${this._tsHandleButtonIconClick}>
-            <ts-icon src=${this.iconSrc} size=${this.size} ?inverse=${this.inverse}></ts-icon>
+        })}' @click=${this._tsHandleButtonIconClick}
+        title="${this.label}">
+            <ts-icon src=${this.iconSrc} size=${this.size} ?inverse=${this.inverse} id='icon'></ts-icon>
         </button>
-        <div class="ts-button-icon__label">
-             ${this.labeled ? html`
-                <span>${this.label}</span>
-            ` : ''}
+        ${this.labeled ? html`
+        <div class="ts-button-icon__label" id="${this.label ? 'label' : this.label}">
+            <span>${this.label || "Button"}</span>
         </div>
+            ` : ''}
         </div>
         `;
     }

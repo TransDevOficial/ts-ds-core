@@ -50,13 +50,29 @@ import '@transdevoficial/ts-ds-core/dist/components/ts-list';
     }
 };
 
+let defaultData = [
+    { label: 'Item 1' },
+    { label: 'Item 2' },
+    { label: 'Item 3' },
+];
+
 export const TsList = (args) => html`
     <ts-list data=${args.data} ?inverse=${args.inverse}>
-        ${args.data.map((item) => html`
+        ${args.data ? args.data.map((item) => html`
             <ts-list-item>
                 <ts-subtitle label="${item.label}" ?inverse=${args.inverse}/>
             </ts-list-item>
-        `)}
+        `) :
+        html`
+        <ts-paragraph label="No data. Please add data to the list."></ts-paragraph>
+
+<pre>
+example:
+
+Data: ${JSON.stringify(defaultData, null, 2)}
+
+</pre>
+`}
     </ts-list>
     `;
 

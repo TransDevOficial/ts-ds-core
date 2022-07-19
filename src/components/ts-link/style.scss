@@ -45,12 +45,13 @@
 
   &--disabled {
     #{$self}__link {
-      color: $neutral-elements-03;
+      filter: opacity(0.5);
+      color: $contrast-color-brand;
       text-decoration: none;
       pointer-events: none;
 
       ts-icon::part(icon) {
-        color: $neutral-elements-03;
+        color: $contrast-color-brand;
       }
     }
   }

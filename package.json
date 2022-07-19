@@ -39,8 +39,7 @@
     "@storybook/addon-a11y": "^6.5.9",
     "@transdevoficial/design-tokens": "^1.0.3",
     "@transdevoficial/ds-assets": "^1.0.2-alpha.3",
-    "lit": "^2.2.6",
-    "ts-ds-cli": "^1.0.1"
+    "lit": "^2.2.6"
   },
   "devDependencies": {
     "@babel/core": "^7.18.2",

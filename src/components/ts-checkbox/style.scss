@@ -36,14 +36,14 @@
 
     &:hover {
       & ~ span {
-        color: $brand-color-pink-01;
+        color: $brand-color-pink-02;
       }
 
       & ~ .checkmark {
-        border-color: $brand-color-pink-01;
+        border-color: $brand-color-pink-02;
 
         & ts-icon::part(icon) {
-          color: $brand-color-pink-01;
+          color: $brand-color-pink-02;
         }
       }
     }
@@ -65,11 +65,11 @@
   #{$self}__input:checked,
   #{$self}__input[checked] {
     & ~ span {
-      color: $brand-color-pink-01;
+      color: $brand-color-pink-02;
     }
 
     & ~ .checkmark {
-      background-color: $brand-color-pink-01;
+      background-color: $brand-color-pink-02;
       border: 2px solid transparent;
 
       & ts-icon::part(icon) {
@@ -81,7 +81,7 @@
   #{$self}__input:checked:disabled,
   #{$self}__input:checked[disabled] {
     & ~ .checkmark {
-      background-color: $neutral-elements-03;
+      background-color: $neutral-elements-03 !important;
     }
   }
 

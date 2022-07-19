@@ -9,7 +9,7 @@
 
   &--primary {
     #{$self}__button {
-      color: $brand-color-pink-01;
+      color: $brand-color-pink-02;
       background-color: transparent;
       border: 2px solid $brand-color-pink-01;
 
@@ -24,7 +24,7 @@
 
   &--secondary {
     #{$self}__button {
-      color: $brand-color-blue-pure;
+      color: $brand-color-blue-01;
       background-color: transparent;
       border: 2px solid $brand-color-blue-pure;
 
@@ -39,7 +39,7 @@
 
   &--danger {
     #{$self}__button {
-      color: $feedback-color-warning-pure;
+      color: $feedback-color-warning-01;
       background-color: transparent;
       border: 2px solid $feedback-color-warning-pure;
 
@@ -54,7 +54,7 @@
 
   &--success {
     #{$self}__button {
-      color: $feedback-color-success-pure;
+      color: $feedback-color-success-02;
       background-color: transparent;
       border: 2px solid $feedback-color-success-pure;
 
@@ -69,9 +69,9 @@
 
   &--warning {
     #{$self}__button {
-      color: darkorange;
+      color: darkred;
       background-color: transparent;
-      border: 2px solid darkorange;
+      border: 2px solid orangered;
 
       &:hover {
         color: $neutral-elements-01;
@@ -168,10 +168,10 @@
     }
 
     #{$self}__button--primary {
-      color: $brand-color-pink-01;
+      color: $brand-color-pink-02;
       &::after {
-        border-top: 2px solid $brand-color-pink-01;
-        border-bottom: 2px solid $brand-color-pink-01;
+        border-top: 2px solid $brand-color-pink-02;
+        border-bottom: 2px solid $brand-color-pink-02;
       }
 
       &.ts-button__button--inverse {
@@ -184,11 +184,11 @@
     }
 
     #{$self}__button--secondary {
-      color: $brand-color-blue-pure;
+      color: $brand-color-blue-01;
       &::after {
         border: 2px solid transparent;
-        border-top: 2px solid $brand-color-blue-pure;
-        border-bottom: 2px solid $brand-color-blue-pure;
+        border-top: 2px solid $brand-color-blue-01;
+        border-bottom: 2px solid $brand-color-blue-01;
       }
 
       &.ts-button__button--inverse {
@@ -201,11 +201,11 @@
     }
 
     #{$self}__button--danger {
-      color: $feedback-color-warning-pure;
+      color: $feedback-color-warning-01;
       &::after {
         border: 2px solid transparent;
-        border-top: 2px solid $feedback-color-warning-pure;
-        border-bottom: 2px solid $feedback-color-warning-pure;
+        border-top: 2px solid $feedback-color-warning-01;
+        border-bottom: 2px solid $feedback-color-warning-01;
       }
 
       &.ts-button__button--inverse {
@@ -218,11 +218,11 @@
     }
 
     #{$self}__button--success {
-      color: $feedback-color-success-pure;
+      color: $feedback-color-success-02;
       &::after {
         border: 2px solid transparent;
-        border-top: 2px solid $feedback-color-success-pure;
-        border-bottom: 2px solid $feedback-color-success-pure;
+        border-top: 2px solid $feedback-color-success-02;
+        border-bottom: 2px solid $feedback-color-success-02;
       }
 
       &.ts-button__button--inverse {
@@ -235,11 +235,11 @@
     }
 
     #{$self}__button--warning {
-      color: orange;
+      color: darkred;
       &::after {
         border: 2px solid transparent;
-        border-top: 2px solid orange;
-        border-bottom: 2px solid orange;
+        border-top: 2px solid orangered;
+        border-bottom: 2px solid orangered;
       }
 
       &.ts-button__button--inverse {

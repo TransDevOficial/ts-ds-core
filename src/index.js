@@ -15,6 +15,7 @@ import TsSelect from './components/ts-select';
 import TsSkeleton from './components/ts-skeleton';
 import TsSubtitle from './components/ts-subtitle';
 import TsTextArea from './components/ts-textarea/';
+import TsTable from  './components/ts-table';
 import TsTooltip from './components/ts-tooltip';
 
 export { 
@@ -36,4 +37,5 @@ export {
     TsSubtitle,
     TsTextArea,
     TsTooltip,
+    TsTable
  };

@@ -50,7 +50,7 @@ export class TsCheckIconButton extends LitElement {
             'ts-check-icon-button--inverse': this.inverse,
         })}'>
 
-            <button class='ts-check-icon-button ts-check-icon-button__button' @click='${this._tsHandleCheckIconButtonClick}'>
+            <button aria-label="check-icon-button" class='ts-check-icon-button ts-check-icon-button__button' @click='${this._tsHandleCheckIconButtonClick}'>
                 ${this.checked ? html`
                     <ts-icon src=${checkIcon} size='small' ?inverse=${this.inverse}></ts-icon>
                 ` : html`

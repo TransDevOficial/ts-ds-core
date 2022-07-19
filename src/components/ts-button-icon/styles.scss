@@ -9,14 +9,14 @@
   &__button {
     @include motion-token(switch-slow, "&:hover");
   }
-  
+
   &--primary {
-    color: $brand-color-pink-01 !important;
+    color: $brand-color-pink-02;
     #{$self}__button {
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 2px solid $brand-color-pink-01;
+      border: 2px solid $brand-color-pink-02;
       border-radius: $border-radius-sm;
       cursor: pointer;
       background-color: transparent;
@@ -24,7 +24,7 @@
 
       ts-icon::part(icon) {
         margin-top: 5px;
-        color: $brand-color-pink-01;
+        color: $brand-color-pink-02;
       }
 
       &:hover {
@@ -45,10 +45,10 @@
           color: $brand-color-blue-02;
         }
 
-        & ~ span {
-          color: $brand-color-blue-pure;
+        & ~ .ts-button-icon__label {
+          color: $brand-color-blue-pure !important;
         }
-
+        
         &:hover {
           background-color: $brand-color-blue-01;
           cursor: pointer;
@@ -58,12 +58,12 @@
   }
 
   &--secondary {
-    color: $brand-color-blue-pure !important;
+    color: $brand-color-blue-01 !important;
     #{$self}__button {
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 2px solid $brand-color-blue-pure;
+      border: 2px solid $brand-color-blue-01;
       border-radius: $border-radius-sm;
       cursor: pointer;
       background-color: transparent;
@@ -71,7 +71,7 @@
 
       ts-icon::part(icon) {
         margin-top: 5px;
-        color: $brand-color-blue-pure;
+        color: $brand-color-blue-01;
       }
 
       &:hover {
@@ -92,8 +92,8 @@
           color: $brand-color-blue-02;
         }
 
-        & ~ span {
-          color: $brand-color-pink-01;
+        & ~ .ts-button-icon__label {
+          color: $brand-color-pink-01 !important;
         }
 
         &:hover {
@@ -105,12 +105,12 @@
   }
 
   &--danger {
-    color: $feedback-color-warning-pure !important;
+    color: $feedback-color-warning-01 !important;
     #{$self}__button {
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 2px solid $feedback-color-warning-pure;
+      border: 2px solid $feedback-color-warning-01;
       border-radius: $border-radius-sm;
       cursor: pointer;
       background-color: transparent;
@@ -118,7 +118,7 @@
 
       ts-icon::part(icon) {
         margin-top: 5px;
-        color: $feedback-color-warning-pure;
+        color: $feedback-color-warning-01;
       }
 
       &:hover {
@@ -137,6 +137,10 @@
 
         ts-icon::part(icon) {
           color: $brand-color-blue-02;
+        }
+
+        & ~ .ts-button-icon__label {
+          color: $neutral-elements-02;
         }
 
         &:hover {
@@ -148,12 +152,12 @@
   }
 
   &--success {
-    color: $feedback-color-success-pure !important;
+    color: $feedback-color-success-02 !important;
     #{$self}__button {
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 2px solid $feedback-color-success-pure;
+      border: 2px solid $feedback-color-success-01;
       border-radius: $border-radius-sm;
       cursor: pointer;
       background-color: transparent;
@@ -161,7 +165,7 @@
 
       ts-icon::part(icon) {
         margin-top: 5px;
-        color: $feedback-color-success-pure;
+        color: $feedback-color-success-01;
       }
 
       &:hover {
@@ -180,6 +184,10 @@
 
         ts-icon::part(icon) {
           color: $brand-color-blue-02;
+        }
+
+        & ~ .ts-button-icon__label {
+          color: $feedback-color-success-pure !important;
         }
 
         &:hover {
@@ -191,12 +199,12 @@
   }
 
   &--warning {
-    color: darkorange !important;
+    color: darkred !important;
     #{$self}__button {
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 2px solid darkorange;
+      border: 2px solid orangered;
       border-radius: $border-radius-sm;
       cursor: pointer;
       background-color: transparent;
@@ -204,7 +212,7 @@
 
       ts-icon::part(icon) {
         margin-top: 5px;
-        color: darkorange;
+        color: orangered;
       }
 
       &:hover {
@@ -223,6 +231,10 @@
 
         ts-icon::part(icon) {
           color: $brand-color-blue-02;
+        }
+
+        & ~ .ts-button-icon__label {
+          color: darkorange !important;
         }
 
         &:hover {
@@ -240,7 +252,7 @@
       height: 35px;
     }
   }
-  
+
   &--medium {
     font-size: $font-size-xxs;
     #{$self}__button {
@@ -274,8 +286,8 @@
         color: $neutral-elements-03;
       }
 
-      & ~ span {
-        color: $neutral-elements-03;
+      & ~ .ts-button-icon__label {
+        color: $neutral-elements-03 !important;
       }
     }
   }

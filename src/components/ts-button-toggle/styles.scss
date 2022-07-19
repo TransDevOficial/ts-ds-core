@@ -81,10 +81,11 @@
 
   &--disabled {
     pointer-events: none;
-    color: $neutral-elements-03 !important;
+    color: $contrast-color-brand !important;
+    filter: opacity(0.5);
     #{$self}__button {
       background-color: $neutral-elements-01 !important;
-      border: 2px solid $neutral-elements-01 !important;
+      border: 2px solid $neutral-elements-03 !important;
 
       &::after {
         background-color: $neutral-elements-03 !important;
@@ -93,19 +94,29 @@
     }
 
     #{$self}__state-label {
-      color: $neutral-elements-03;
+      color: $contrast-color-brand !important;
     }
   }
 
   &--inverse {
     color: $neutral-elements-01;
-
+    
     #{$self}__button {
-      background-color: $brand-color-blue-pure;
-      border: none;
+      background-color: transparent;
+      border: 2px solid $brand-color-blue-pure;
 
       &::after {
-        background-color: $brand-color-blue-01;
+        background-color: $brand-color-blue-pure;
+      }
+    }
+
+    &.ts-button-toggle--checked {
+      #{$self}__button {
+        background-color: $brand-color-blue-pure;
+
+        &::after {
+          background-color: $neutral-elements-01;
+        }
       }
     }
   }

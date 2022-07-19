@@ -82,7 +82,7 @@ export class TsButton extends SkeletonFactory {
           ?disabled=${this.disabled}
         >
           <span>
-          ${this.loading ? `Loading` : this.label}
+          ${this.loading ? `Loading` : (this.label ? this.label : "Button")}
           </span>
         </button>
       </div>

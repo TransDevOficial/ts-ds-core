@@ -70,7 +70,8 @@ export class TsButtonToggle extends SkeletonFactory {
             <label class="ts-button-toggle__label">
                 <span class="ts-button-toggle__label-text">${this.label}</span>
                 <div class="ts-button-toggle__button-container">
-                    <button class="ts-button-toggle__button" @click=${this._tsHandleButtonToggleClick}></button>
+                    <button
+                    aria-label='button-toggle' class="ts-button-toggle__button" @click=${this._tsHandleButtonToggleClick}></button>
                 </div>
             </label>
             <span class="ts-button-toggle__state-label">
